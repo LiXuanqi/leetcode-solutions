@@ -19,3 +19,7 @@ class Solution {
         return count;     
     }
 }
+
+// NOTE:
+// 1. SET
+// 2. Greedy
