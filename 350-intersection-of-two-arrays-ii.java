@@ -8,7 +8,7 @@ class Solution {
       
       HashMap<Integer, Integer> map = new HashMap<>();
       
-      for (int num : nums1) {
+      for (int num : nums1) {2
           if (!map.containsKey(num)) {
               map.put(num, 0);
           }
