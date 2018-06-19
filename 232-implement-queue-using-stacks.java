@@ -8,38 +8,31 @@ class MyQueue {
       stack1 = new Stack<>();
       stack2 = new Stack<>();
   }
-  // Stack1: 1 2 3 4 5 6 7 8
-  // Stack2: 
   
   /** Push element x to the back of queue. */
   public void push(int x) {
+      while (!stack2.empty()) {
+          stack1.push(stack2.pop());
+      }
       stack1.push(x);
       size += 1;
   }
   
   /** Removes the element from in front of queue and returns that element. */
   public int pop() {
-      while (stack1.size() > 1) {
+      while (!stack1.empty()) {
           stack2.push(stack1.pop());
       }
-      int result = stack1.pop();
       size -= 1;
-      while (stack2.size() > 0) {
-          stack1.push(stack2.pop());
-      }
-      return result;
+      return stack2.pop();
   }
   
   /** Get the front element. */
   public int peek() {
-      while (stack1.size() > 1) {
+      while (!stack1.empty()) {
           stack2.push(stack1.pop());
       }
-      int result = stack1.peek();
-      while (stack2.size() > 0) {
-          stack1.push(stack2.pop());
-      }
-      return result;
+      return stack2.peek();
   }
   
   /** Returns whether the queue is empty. */
