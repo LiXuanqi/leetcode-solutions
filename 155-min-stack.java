@@ -54,13 +54,12 @@ class MinStack {
   
   public void push(int x) {
       stack1.push(x);
-      if (stack2.empty()) {
+      Pair pair = null;
+      if (!stack2.empty()) {
+          pair = stack2.peek();  
+      }
+      if ( pair == null || pair.left > x) {
           stack2.push(new Pair(x, stack1.size() - 1));
-      } else {
-          Pair pair = stack2.peek();
-          if (pair.left > x) {
-              stack2.push(new Pair(x, stack1.size() - 1));
-          }
       }
   }
   
