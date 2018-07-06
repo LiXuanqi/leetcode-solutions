@@ -1,16 +1,24 @@
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> list = new ArrayList<>();
-        backtrack(list, new ArrayList<>(), nums, 0);
-        return list;
+        List<List<Integer>> result =  new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            return result;
+        }   
+        dfs(nums, 0, new ArrayList<Integer>(), result);
+        return result;
     }
-    private void backtrack(List<List<Integer>> list, List<Integer> templist, int[] nums, int start){
-        list.add(new ArrayList<>(templist));
-        for(int i=start; i<nums.length; i++){
-            templist.add(nums[i]);
-            backtrack(list, templist, nums, i+1);
-            templist.remove(templist.size()-1);
+    private void dfs(int[] nums, int level, List<Integer> temp, List<List<Integer>> solutions) {
+        if (level == nums.length) {
+            solutions.add(new ArrayList<Integer>(temp));
+            return;
         }
-        return ;
+        temp.add(nums[level]);
+        dfs(nums, level + 1, temp, solutions);
+        temp.remove(temp.size() - 1);
+        dfs(nums, level + 1, temp, solutions);
+        
     }
 }
+
+// Space = O(n)
+// Time = O(2^n)
