@@ -1,8 +1,5 @@
 class Solution {
     public double myPow(double x, int n) {
-        if (x == 0 && n == 0) {
-            return 0;
-        }
         if (n < 0) {
             return 1 / pow(x, -n);
         }
@@ -15,13 +12,9 @@ class Solution {
         if (n == 1) {
             return x;
         }
-        double power = pow(x, n / 2);
-        if (n % 2 == 0) {
-            return power * power;
-        }
-        return x * power * power;
+        double half = pow(x, n / 2);
+        return n % 2 == 0 ? half * half : half * half * x;
     }
 }
-
 // Time: log(n)
 // Space: log(n)
