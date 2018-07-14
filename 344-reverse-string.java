@@ -19,3 +19,16 @@ class Solution {
       str[right] = temp;
   }
 }
+
+// recursion (Memory Limit Exceeded)
+class Solution {
+  public String reverseString(String s) {
+      if (s == null) {
+          return null;
+      }
+      if (s.length() <= 1) {
+          return s;
+      }
+      return s.charAt(s.length() - 1) + reverseString(s.substring(1, s.length() - 1)) + s.charAt(0); 
+  }
+}
