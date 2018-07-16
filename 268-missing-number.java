@@ -20,3 +20,18 @@ class Solution {
 // Space = O(n)
 
 // TODO: bit operation.
+class Solution {
+    public int missingNumber(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        int result = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            result ^= i;
+            result ^= nums[i];
+        }
+        return result;
+    }
+}
+// Time = O(n)
+// Space = O(1)
