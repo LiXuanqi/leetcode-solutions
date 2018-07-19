@@ -1,21 +1,37 @@
 class Solution {
     public List<List<Integer>> permuteUnique(int[] nums) {
-        List<List<Integer>> list = new ArrayList<>();
-        Arrays.sort(nums);
-        backtrack(list, new ArrayList<>(), nums, new boolean[nums.length]);
-        return list;
+        List<List<Integer>> result = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            return result;
+        }
+        dfs(nums, 0, result);
+        return result;
     }
-    private void backtrack(List<List<Integer>> list, List<Integer> templist, int[] nums, boolean[] used){
-        if(templist.size() == nums.length && !list.contains(templist) ){
-            list.add(new ArrayList<>(templist));
+    private void dfs(int[] nums, int level, List<List<Integer>> solutions) {
+        if (level == nums.length) {
+            List<Integer> temp = new ArrayList<>();
+            for (int num : nums) {
+                temp.add(num);
+            }
+            solutions.add(temp);
+            return;
         }
-        for(int i=0; i<nums.length; i++){
-            if(used[i] || i>0 && nums[i] == nums[i-1] && !used[i-1]) continue;
-            templist.add(nums[i]);
-            used[i] = true;
-            backtrack(list, templist, nums, used);
-            templist.remove(templist.size()-1);
-            used[i] = false;
+        Set<Integer> set = new HashSet<>();
+        for (int i = level; i < nums.length; i++) {
+            if (!set.contains(nums[i])) {
+                set.add(nums[i]);
+                swap(nums, level, i);
+                dfs(nums, level + 1, solutions);
+                swap(nums, level, i);
+            }
         }
+    }
+    private void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
     }
 }
+
+//      1a(1b2)                  2(1a1b)
+// 1a1b(2) 1a2(1b)              21a(1b)
