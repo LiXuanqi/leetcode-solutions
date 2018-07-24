@@ -28,6 +28,5 @@ class Solution {
       } else {
           return left;
       }
-     
   }
 }
