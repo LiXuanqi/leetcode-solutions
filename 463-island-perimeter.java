@@ -1,3 +1,29 @@
+// Method 1:
+class Solution {
+    public int islandPerimeter(int[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        int edges = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == 1) {
+                    edges += 4;
+                    // check down
+                    if (i < grid.length - 1 && grid[i + 1][j] == 1) {
+                        edges -= 2;
+                    }
+                    // check right
+                    if (j < grid[0].length - 1 && grid[i][j + 1] == 1) {
+                        edges -= 2;
+                    }
+                }
+            }
+        }
+        return edges;
+    }
+}
+// Method 2:
 class Solution {
     class Coordinate {
         int x;
