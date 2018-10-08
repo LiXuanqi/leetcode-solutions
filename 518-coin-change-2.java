@@ -1,3 +1,24 @@
+// Method 1: dp
+class Solution {
+    public int change(int amount, int[] coins) {
+        
+        if (coins == null || amount < 0) {
+            return 0;
+        }
+        int[] dp = new int[amount + 1];
+        dp[0] = 1;
+        for (int i = 0; i < coins.length; i++) {
+            for (int j = 0; j < dp.length; j++) {
+        
+                dp[j] = dp[j] + ((j - coins[i] >= 0) ? dp[j - coins[i]] : 0);
+            }
+        }
+        return dp[dp.length - 1];
+    }
+}
+
+
+// Method 2: DFS
 class Solution {
   private int result = 0;
   public int change(int amount, int[] coins) {
