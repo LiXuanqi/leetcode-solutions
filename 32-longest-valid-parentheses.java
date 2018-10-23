@@ -1,30 +1,32 @@
 class Solution {
     public int longestValidParentheses(String s) {
-        if (s == null || s.length() <= 1) {
+        if (s == null || s.length() == 0) {
             return 0;
         }
         int longest = 0;
-        int[] dp = new int[s.length()];
+        char[] str = s.toCharArray();
+        int[] dp = new int[str.length];
         dp[0] = 0;
-        for (int i = 1; i < s.length(); i++) {
-            if (s.charAt(i) == '(') {
+        // dp[i] 
+        for (int i = 1; i < str.length; i++) {
+            if (str[i] == '(') {
                 dp[i] = 0;
             } else {
-                if (s.charAt(i - 1) == ')') {
-                    // "))"
-                    int leftParenthese = i - dp[i - 1] - 1;
-                    if (leftParenthese >= 0 && s.charAt(leftParenthese) == '(') {
-                        dp[i] = 2 + ((leftParenthese - 1 >= 0) ? dp[leftParenthese - 1] : 0) + dp[i - 1];
-                    } else {
-                        dp[i] = 0;
-                    }
+                // ()
+                if (str[i - 1] == '(') {
+       
+                    dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
                 } else {
-                    // "()"
-                    dp[i] = (i - 2 >= 0) ? dp[i - 2] + 2 : 2;
+                    // ))
+                    int mostLeftParentheseIndex = i - dp[i - 1] - 1;
+                    if (mostLeftParentheseIndex >= 0 && str[mostLeftParentheseIndex] == '(') {
+                        dp[i] = 2 + dp[i - 1] + (mostLeftParentheseIndex >= 1 ? dp[mostLeftParentheseIndex - 1] : 0);
+                    }
                 }
-            }  
+            }
             longest = Math.max(longest, dp[i]);
         }
         return longest;
     }
 }
+

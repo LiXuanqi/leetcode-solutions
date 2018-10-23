@@ -3,22 +3,29 @@ class Solution {
         if (s == null) {
             return false;
         }
+        if (s.length() == 0) {
+            return true;
+        }
         Map<Character, Character> map = new HashMap<>();
-        map.put(')', '(');
-        map.put(']', '[');
-        map.put('}', '{');
-        Deque<Character> stack = new ArrayDeque<>();
-        for (int i = 0; i < s.length(); i++) {
-            char character = s.charAt(i);
-            if (stack.isEmpty() || stack.peekFirst() != map.get(character)) {
-                stack.offerFirst(character);
+        map.put('(', ')');
+        map.put('[', ']');
+        map.put('{', '}');
+        Deque<Character> stack = new LinkedList<>();
+        char[] str = s.toCharArray();
+        for (char c : str) {
+            if (map.containsKey(c)) {
+                stack.offerFirst(c);
             } else {
-                stack.pollFirst();
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                if (map.get(stack.peekFirst()) == c) {
+                    stack.pollFirst();
+                } else {
+                    return false;
+                }
             }
         }
-        return stack.size() == 0;
+        return stack.isEmpty();
     }
 }
-
-// Time = O(n)
-// Space = O(n)
