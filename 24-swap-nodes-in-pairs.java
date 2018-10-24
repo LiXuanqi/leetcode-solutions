@@ -8,18 +8,13 @@
  */
 class Solution {
     public ListNode swapPairs(ListNode head) {
-        if (head == null) {
-            return null;
-        }
-        if (head.next == null) {
+        if (head == null || head.next == null) {
             return head;
         }
-        ListNode myHead = head.next;
-        head.next = swapPairs(myHead.next);
-        myHead.next = head;
-        return myHead;
+        ListNode newHead = head.next;
+        ListNode reversedList = swapPairs(newHead.next);
+        newHead.next = head;
+        head.next = reversedList;
+        return newHead;
     }
 }
-
-// Time = O(n)
-// Space = O(1)
