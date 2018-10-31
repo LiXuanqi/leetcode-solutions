@@ -7,6 +7,34 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+// Method 1: inorder traversal
+class Solution {
+    Integer prev = null;
+    int ans = Integer.MAX_VALUE;
+    public int minDiffInBST(TreeNode root) {
+        if (root == null) {
+            return -1;
+        }
+        inorderTraverse(root);
+        return ans;
+    }
+    private void inorderTraverse(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        inorderTraverse(root.left);
+        if (prev == null) {
+            prev = root.val;
+        } else {
+            int diff = root.val - prev;
+            ans = Math.min(diff, ans);
+            prev = root.val;
+        }
+        
+        inorderTraverse(root.right);
+    }
+}
+// Method 2: without recurssion
 class Solution {
     public int minDiffInBST(TreeNode root) {
         int minDiff = Integer.MAX_VALUE;
