@@ -3,7 +3,6 @@ class Solution {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        int[] dp = new int[nums.length];
         int sum = 0;
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < nums.length; i++) {
