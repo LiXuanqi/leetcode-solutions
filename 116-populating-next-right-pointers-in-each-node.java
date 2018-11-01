@@ -6,6 +6,26 @@
  *     TreeLinkNode(int x) { val = x; }
  * }
  */
+// Method 1: Recurssion
+
+public class Solution {
+    public void connect(TreeLinkNode root) {
+        if (root == null) {
+            return;
+        }
+        // perfect tree must have 0 or 2 children.
+        if (root.left != null) {
+            root.left.next = root.right;
+            if (root.next != null) {
+                root.right.next = root.next.left;
+            }
+            connect(root.left);
+            connect(root.right);
+        } 
+    }
+}
+
+// Method 2: level order traversal with Queue
 public class Solution {
     public void connect(TreeLinkNode root) {
         if (root == null) {
