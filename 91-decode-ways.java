@@ -4,15 +4,14 @@ class Solution {
             return 0;
         }
         int[] dp = new int[s.length() + 1];
+        char[] str = s.toCharArray();
         dp[0] = 1;
-        for (int i = 1; i < dp.length; i++) {     
+        for (int i = 1; i < dp.length; i++) {
             int sum = 0;
-            // check 1 position.
-            if (isValid(s.substring(s.length() - i, s.length() - i + 1))) {
+            if (isValid(str[i - 1] + "")) {
                 sum += dp[i - 1];
             }
-            // check 2 position.
-            if (i >= 2 && isValid(s.substring(s.length() - i, s.length() - i + 2))) {
+            if (i >= 2 && isValid(str[i - 2] + "" + str[i - 1])) {         
                 sum += dp[i - 2];
             }
             dp[i] = sum;
@@ -23,7 +22,10 @@ class Solution {
         if (str.startsWith("0")) {
             return false;
         }
-        int num = Integer.parseInt(str);
-        return 1 <= num && num <= 26;
+        int val = Integer.parseInt(str);
+        return 1 <= val && val <= 26;
     }
 }
+
+//    "2 2 6"
+//  1  1 2 3
