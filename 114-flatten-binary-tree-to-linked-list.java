@@ -1,35 +1,37 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
 class Solution {
+    class ResultType {
+        TreeNode head;
+        TreeNode tail;
+        public ResultType(TreeNode head, TreeNode tail) {
+            this.head = head;
+            this.tail = tail;
+        }
+    }
     public void flatten(TreeNode root) {
         if (root == null) {
             return;
         }
-        flattenTreeAndReturnHead(root);
+        flattenTree(root);
     }
-    private TreeNode flattenTreeAndReturnHead(TreeNode root) {
+    public ResultType flattenTree(TreeNode root) {
         if (root == null) {
             return null;
         }
-        TreeNode leftHead = flattenTreeAndReturnHead(root.left);
-        TreeNode rightHead = flattenTreeAndReturnHead(root.right);
-        TreeNode curr = root;
-        root.left = null;
-        if (leftHead != null) {
-            curr.right = leftHead;
-            // find the tail of left subtree.
-            while (curr.right != null) {
-                curr = curr.right;
-            }
+        ResultType left = flattenTree(root.left);
+        ResultType right = flattenTree(root.right);
+        if (left == null && right == null) {
+            return new ResultType(root, root);
         }
-        curr.right = rightHead;
-        return root;
+        if (left == null) {
+            return new ResultType(root, right.tail);
+        }
+        if (right == null) {
+            return new ResultType(root, left.tail);
+        }
+        root.left = null;
+        root.right = left.head;
+        left.tail.right = right.head;
+        return new ResultType(root, right.tail);
     }
+    
 }
