@@ -8,35 +8,21 @@
  * }
  */
 class Solution {
-  public int minDepth(TreeNode root) {
-      if (root == null) {
-          return 0;
-      }
-      Queue<TreeNode> queue = new LinkedList<TreeNode>();
-      queue.offer(root);
-      int level = 0;
-      while (!queue.isEmpty()) {
-          int size = queue.size();
-          level++;
-          for (int i = 0; i < size; i++) {
-              
-              TreeNode node = queue.poll();
-              if (node.left != null) {
-                  queue.offer(node.left);
-              }
-              if (node.right != null) {
-                  queue.offer(node.right);
-              }
-              if (node.left == null && node.right == null) {
-                  return level;
-              }
-          }
-      }
-      return level;
-  }
+    public int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left = minDepth(root.left);
+        int right = minDepth(root.right);
+        if (left == 0 && right == 0) {
+            return 1;
+        }
+        if (left == 0) {
+            return right + 1;
+        }
+        if (right == 0) {
+            return left + 1;
+        }
+        return Math.min(left, right) + 1;
+    }
 }
-
-// Time = O(n)
-// Space = O(n)
-
-// TODO: recursion
