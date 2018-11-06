@@ -1,22 +1,20 @@
 class Solution {
     public boolean isMonotonic(int[] A) {
-        if (A == null || A.length == 0) {
-            return false;
+        int start = 0;
+        int end = A.length - 1;
+        int sign = 0; // 0 : equals, 1: up, -1: down
+        if (A[start] == A[end]) {
+            sign = 0;
+        } else if (A[start] < A[end]) {
+            sign = 1;
+        } else {
+            sign = -1;
         }
-        if (A.length <= 2) {
-            return true;
-        }
-        int flag = Integer.compare(A[0], A[1]);
         for (int i = 1; i < A.length; i++) {
-            int diff = Integer.compare(A[i - 1], A[i]);
-            if (diff == 0) {
-                continue;
+            if (sign == 0 && A[i] != A[i - 1]) {
+                return false;
             }
-            if (flag == 0) {
-                flag = diff;
-                continue;
-            }
-            if (diff != flag) {
+            if ((A[i] - A[i - 1]) * sign < 0) {
                 return false;
             }
         }
