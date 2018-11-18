@@ -15,29 +15,22 @@ class Solution {
         if (root == null) {
             return ans;
         }
-        Map<Integer, List<Integer>> map = new HashMap<>();
-        getHeight(root, map);
-  
-        for (int i = low; i <= high; i++) {
-            if (map.containsKey(i)) {
-                ans.add(map.get(i));
-            }
-        }
+
+        getHeight(root, ans);
+
         return ans;
     }
-    private int getHeight(TreeNode node, Map<Integer, List<Integer>> map) {
+    private int getHeight(TreeNode node, List<List<Integer>> list) {
         if (node == null) {
-            return 0;
+            return -1;
         }
-        int left = getHeight(node.left, map);
-        int right = getHeight(node.right, map);
+        int left = getHeight(node.left, list);
+        int right = getHeight(node.right, list);
         int height = Math.max(left, right) + 1;
-        if (!map.containsKey(height)) {
-            map.put(height, new ArrayList<>());
+        if (height >= list.size()) {
+            list.add(new ArrayList<>());
         }
-        map.get(height).add(node.val);
-        low = Math.min(low, height);
-        high = Math.max(high, height);
+        list.get(height).add(node.val);
         return height;
     }
 }
