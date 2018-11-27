@@ -21,31 +21,26 @@ class Solution {
         }
         Node left = treeToDoublyList(root.left);
         Node right = treeToDoublyList(root.right);
-        
         root.left = root;
         root.right = root;
-        
         return concatenate(concatenate(left, root), right);
-        
     }
-    private Node concatenate(Node leftHead, Node rightHead) {
-        if (leftHead == null && rightHead == null) {
+    private Node concatenate(Node node1, Node node2) {
+        if (node1 == null && node2 == null) {
             return null;
         }
-        if (leftHead == null) {
-            return rightHead;
+        if (node1 == null) {
+            return node2;
         }
-        if (rightHead == null) {
-            return leftHead;
+        if (node2 == null) {
+            return node1;
         }
-        Node leftTail = leftHead.left;
-        Node rightTail = rightHead.left;
-        
-        leftTail.right = rightHead;
-        rightHead.left = leftTail;
-        rightTail.right = leftHead;
-        leftHead.left = rightTail;
-        
-        return leftHead;
+        Node node1Tail = node1.left;
+        Node node2Tail = node2.left;
+        node1Tail.right = node2;
+        node2.left = node1Tail;
+        node1.left = node2Tail;
+        node2Tail.right = node1;
+        return node1;
     }
 }

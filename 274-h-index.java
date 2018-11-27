@@ -15,6 +15,8 @@ class Solution {
                 left = mid;
             }
         }
+        // 1. why countBiggerAndEquals(citations, right) >= right not == ?
+        // 2. why check right firstly?
         if (countBiggerAndEquals(citations, right) >= right) {
             return right;
         }
