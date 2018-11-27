@@ -1,75 +1,76 @@
 class Solution {
     class Number {
         int val;
-        int count;
         int index;
-        public Number (int val, int index) {
+        int count;
+        public Number(int val, int index) {
             this.val = val;
             this.index = index;
         }
     }
     public List<Integer> countSmaller(int[] nums) {
-        if (nums == null) {
-            return null;
+        List<Integer> ans = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            return ans;
         }
         Number[] numbers = getNumbers(nums);
-        
         mergeSort(numbers, 0, numbers.length - 1, new Number[numbers.length]);
         
-        List<Integer> result = new ArrayList<>();
+        int[] result = new int[nums.length];
         
-        int[] count = new int[nums.length];
         for (int i = 0; i < numbers.length; i++) {
-            count[numbers[i].index] = numbers[i].count;
+            result[numbers[i].index] = numbers[i].count;
         }
-        for (int i = 0; i < count.length; i++) {
-            result.add(count[i]);
+        for (int i = 0; i < result.length; i++) {
+            ans.add(result[i]);
         }
-        return result;
+        return ans;
     }
-    private void mergeSort(Number[] nums, int start, int end, Number[] temp) {
+    private void mergeSort(Number[] numbers, int start, int end, Number[] temp) {
         if (start >= end) {
             return;
         }
         int mid = start + (end - start) / 2;
+        mergeSort(numbers, start, mid, temp);
+        mergeSort(numbers, mid + 1, end, temp);
         
-        mergeSort(nums, start, mid, temp);
-        mergeSort(nums, mid + 1, end, temp);
+        helper(numbers, start, end);
         
-        helper(nums, start, mid, end);
-        
-        merge(nums, start, mid, end, temp);
+        merge(numbers, start, end, temp);
     }
-    private void helper(Number[] nums, int start, int mid, int end) {
-        int j = mid + 1;
-        int c = 0;
-        for (int i = start; i <= mid; i++) {
-            while (j <= end && nums[i].val > nums[j].val) {
-                j++;
-                c++;
-            }
-            nums[i].count = nums[i].count + c;
-        }
-    }
-    private void merge(Number[] nums, int start, int mid, int end, Number[] temp) {
-        int index = start;
-        int left = start;
+    // find i < j, num[i] > nums[j]
+    private void helper(Number[] numbers, int start, int end) {
+        int mid = start + (end - start) / 2;
+        int count = 0;
         int right = mid + 1;
-        while (left <= mid && right <= end) {
-            if (nums[left].val < nums[right].val) {
-                temp[index++] = nums[left++];
+        for (int i = start; i <= mid; i++) {
+            while (right <= end && numbers[i].val > numbers[right].val) {
+                count++;
+                right++;
+            }
+            numbers[i].count += count;
+        }
+    }
+    private void merge(Number[] numbers, int start, int end, Number[] temp) {
+        int mid = start + (end - start) / 2;
+        int pointer1 = start;
+        int pointer2 = mid + 1;
+        int index = start;
+        while (pointer1 <= mid && pointer2 <= end) {
+            if (numbers[pointer1].val < numbers[pointer2].val) {
+                temp[index++] = numbers[pointer1++];
             } else {
-                 temp[index++] = nums[right++];
+                temp[index++] = numbers[pointer2++];
             }
         }
-        while (left <= mid) {
-             temp[index++] = nums[left++];
+        while (pointer1 <= mid) {
+            temp[index++] = numbers[pointer1++];
         }
-        while (right <= end) {
-             temp[index++] = nums[right++];
+        while (pointer2 <= end) {
+            temp[index++] = numbers[pointer2++];
         }
         for (int i = start; i <= end; i++) {
-            nums[i] = temp[i];
+            numbers[i] = temp[i];
         }
     }
     private Number[] getNumbers(int[] nums) {
