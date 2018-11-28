@@ -1,3 +1,18 @@
+// method 1:
+class Solution {
+    public int hIndex(int[] citations) {
+        if (citations == null || citations.length == 0) {
+            return 0;
+        }
+        Arrays.sort(citations);
+        int i = 1;
+        while (i <= citations.length && citations[citations.length - i] >= i) {
+            i++;
+        }
+        return i - 1;
+    }
+}
+// method 2:
 class Solution {
     public int hIndex(int[] citations) {
         if (citations == null || citations.length == 0) {
