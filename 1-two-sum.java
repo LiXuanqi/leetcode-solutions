@@ -3,12 +3,11 @@ class Solution {
         if (nums == null || nums.length == 0) {
             return null;
         }
-        // Key: num, Value: index
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            int wanted = target - nums[i];
-            if (map.containsKey(wanted)) {
-                return new int[] {map.get(wanted), i};
+            int need = target - nums[i];
+            if (map.containsKey(need)) {
+                return new int[] {map.get(need), i};
             } else {
                 map.put(nums[i], i);
             }
