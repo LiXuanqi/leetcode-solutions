@@ -10,15 +10,16 @@ class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null) {
             return null;
-        }
+        }    
         ListNode slow = head;
-        ListNode prev = null;
         ListNode fast = head;
-        // find the target node
-        for (int i = 0; i < n - 1; i++) {
+        // move n step
+        while (n > 0 && fast != null) {
             fast = fast.next;
+            n--;
         }
-        while (fast.next != null) {
+        ListNode prev = null;
+        while (fast != null) {
             prev = slow;
             slow = slow.next;
             fast = fast.next;
@@ -26,7 +27,9 @@ class Solution {
         if (slow == head) {
             return head.next;
         }
+        // delete node
         prev.next = slow.next;
+        slow.next = null;
         return head;
     }
 }
