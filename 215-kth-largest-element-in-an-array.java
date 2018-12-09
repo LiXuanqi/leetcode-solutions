@@ -1,20 +1,19 @@
 class Solution {
     public int findKthLargest(int[] nums, int k) {
-        if (nums == null || nums.length == 0 || k <= 0 || k > nums.length) {
-            return -1;
-        }     
-        return quickSelect(nums, 0, nums.length - 1, k);
+        if (nums == null || nums.length == 0 || k < 1) {
+            return -1; // invalid input.
+        }
+        return helper(nums, k, 0, nums.length - 1);
     }
-    private int quickSelect(int[] nums, int start, int end, int k) {
-
+    private int helper(int[] nums, int k, int start, int end) {
         if (start == end) {
             return nums[start];
         }
-        
         int left = start;
         int right = end;
         int mid = left + (right - left) / 2;
         int pivot = nums[mid];
+        // partition.
         while (left <= right) {
             while (left <= right && nums[left] > pivot) {
                 left++;
@@ -22,26 +21,28 @@ class Solution {
             while (left <= right && nums[right] < pivot) {
                 right--;
             }
+            // after swap, it might be right | (element) | left
             if (left <= right) {
                 swap(nums, left, right);
                 left++;
                 right--;
             }
         }
-
-        if (start + k - 1 <= right) {
-            return quickSelect(nums, start, right, k);
+        // on the left side.
+        if (right - start + 1 >= k) {
+            return helper(nums, k, start, right);
         }
-        if (start + k - 1 >= left) {
-            // why not quickSelect(nums.left, end, k - (left - start));
-            return quickSelect(nums, left, end, k - (left - start));
+        // on the right side.
+        // left - start = (left - 1) - start + 1
+        if (k > left - start) {
+            return helper(nums, k - (left - start), left, end);
         }
         return nums[right + 1];
         
     }
-    private void swap(int[] nums, int left, int right) {
-        int temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
+    private void swap(int[] nums, int start, int end) {
+        int temp = nums[start];
+        nums[start] = nums[end];
+        nums[end] = temp;
     }
 }
