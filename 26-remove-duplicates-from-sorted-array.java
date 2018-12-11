@@ -1,22 +1,17 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        if (nums == null) {
-            return -1;
+        if (nums == null || nums.length == 0) {
+            return 0;
         }
-        if (nums.length <= 1) {
-            return nums.length;
-        }
-        int slow = 1;
-        int fast = 1;
-        while (fast < nums.length) {
-            if (nums[fast] == nums[slow - 1]) {
-                fast++;
+        int left = 1;
+        int right = 0;
+        while (right < nums.length) {
+            if (nums[left - 1] == nums[right]) {
+                right++;
             } else {
-                nums[slow++] = nums[fast++];
+                nums[left++] = nums[right++];
             }
         }
-        return slow;
+        return left;
     }
 }
-// Time = O(n)
-// Space = O(1)
