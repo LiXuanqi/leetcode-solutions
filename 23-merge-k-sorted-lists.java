@@ -7,33 +7,29 @@
  * }
  */
 class Solution {
-  public ListNode mergeKLists(ListNode[] lists) {
-      if (lists == null || lists.length == 0) {
-          return null;
-      }
-      PriorityQueue<ListNode> pQueue = new PriorityQueue<ListNode>(lists.length, new Comparator<ListNode>() {
-          @Override
-          public int compare(ListNode node1, ListNode node2) {
-              return node1.val < node2.val ? -1 : 1;
-          }
-      });
-      
-      for (int i = 0; i < lists.length; i++) {
-          if (lists[i] != null) {
-              pQueue.add(lists[i]);    
-          }
-      }
-      
-      ListNode dummy = new ListNode(-1);
-      ListNode curr = dummy;
-      while (!pQueue.isEmpty()) {
-          ListNode node = pQueue.poll();
-          curr.next = node;
-          curr = curr.next;
-          if (node.next != null) {
-              pQueue.add(node.next);   
-          }    
-      }
-      return dummy.next;
-  }
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null || lists.length == 0) {
+            return null;
+        }
+        ListNode dummy = new ListNode(-1);
+        PriorityQueue<ListNode> heap = new PriorityQueue<ListNode>((node1, node2) -> {
+            return node1.val < node2.val ? -1 : 1;
+        });
+        for (ListNode list : lists) {
+            if (list != null) {
+                heap.offer(list);      
+            }
+        }
+        ListNode curr = dummy;
+        while (!heap.isEmpty()) {
+            ListNode node = heap.poll();
+            curr.next = node;
+            curr = curr.next;
+            if (node.next != null) {
+                heap.offer(node.next);
+            }
+        }
+        curr.next = null;
+        return dummy.next;
+    }
 }
