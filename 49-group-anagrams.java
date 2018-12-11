@@ -1,31 +1,19 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> results = new ArrayList<>();
+        List<List<String>> ans = new ArrayList<>();
         if (strs == null || strs.length == 0) {
-            return results;
+            return ans;
         }
-        Map<Integer, List<String>> map = new HashMap<>();
+        Map<String, List<String>> map = new HashMap<>();
         for (String str : strs) {
-            int code = uniCode(str);
-            if (map.containsKey(code)) {
-                map.get(code).add(str);
-            } else {
-                List<String> list = new ArrayList<>();
-                list.add(str);
-                map.put(code, list);
+            char[] copy = str.toCharArray();
+            Arrays.sort(copy);
+            String sorted = String.valueOf(copy);
+            if (!map.containsKey(sorted)) {
+                map.put(sorted, new ArrayList<>());
             }
+            map.get(sorted).add(str);
         }
-        for (List<String> list : map.values()) {
-            results.add(list);
-        }
-        return results;
-        
-    }
-    private int uniCode (String str) {
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
-            count += str.charAt(i) * str.charAt(i) * str.charAt(i) * str.charAt(i);
-        }
-        return count;
+        return new ArrayList<>(map.values());
     }
 }
