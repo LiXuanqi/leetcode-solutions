@@ -12,9 +12,8 @@ class Solution {
             return head;
         }
         ListNode newHead = head.next;
-        ListNode reversedList = swapPairs(newHead.next);
+        head.next = swapPairs(newHead.next);
         newHead.next = head;
-        head.next = reversedList;
         return newHead;
     }
 }
