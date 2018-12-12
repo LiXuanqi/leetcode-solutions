@@ -3,20 +3,13 @@ class Solution {
         if (s == null || s.length() == 0) {
             return 0;
         }
-        int pointer = s.length() - 1;
-        // find first non-empty character from end of the string.
-        while (pointer >= 0 && !Character.isLetter(s.charAt(pointer))) {
-            pointer--;
+        s = s.trim();
+        int i = s.length() - 1;
+        int ans = 0;
+        while (i >= 0 && s.charAt(i) != ' ') {
+            i--;
+            ans++;
         }
-        // count the length
-        int count = 0;
-        while (pointer >= 0 && Character.isLetter(s.charAt(pointer))) {
-            count++;
-            pointer--;
-        }
-        return count;
+        return ans;
     }
 }
-// LeetCode 58
-// Time = O(n)
-// Space = O(1)
