@@ -9,34 +9,24 @@
  */
 class Solution {
     public List<Interval> merge(List<Interval> intervals) {
-        if (intervals == null) {
-            return null;
-        }
-        if (intervals.size() <= 1) {
-            return intervals;
-        }
-        List<Interval> result = new ArrayList<>();
-        PriorityQueue<Interval> pQueue = new PriorityQueue<Interval>(intervals.size(), new Comparator<Interval>() {
-            @Override
-            public int compare(Interval i1, Interval i2) {
-                return i1.start < i2.start ? -1 : 1;
-            }
+        List<Interval> ans = new ArrayList<>();
+        if (intervals == null || intervals.size() == 0) {
+            return ans;
+        }   
+        Collections.sort(intervals, (interval1, interval2) -> {
+            return Integer.compare(interval1.start, interval2.start);
         });
-        for (Interval interval : intervals) {
-            pQueue.offer(interval);
-        }
-        Interval curr = pQueue.poll();
-        while (!pQueue.isEmpty()) {
-            Interval next = pQueue.poll();
-            if (next.start > curr.end) {
-                result.add(curr);
-                curr = next;
+        Interval last = intervals.get(0);
+        for (int i = 1; i < intervals.size(); i++) {
+            Interval next = intervals.get(i);
+            if (last.end >= next.start) {
+                last.end = Math.max(last.end, next.end);
             } else {
-                curr.start = Math.min(curr.start, next.start);
-                curr.end = Math.max(curr.end, next.end);
+                ans.add(last);
+                last = next;
             }
         }
-        result.add(curr);
-        return result;
+        ans.add(last);
+        return ans;
     }
 }
