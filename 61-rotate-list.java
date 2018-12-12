@@ -11,23 +11,24 @@ class Solution {
         if (head == null || k < 0) {
             return null;
         }
-        int count = 1;
+        
+        // find tail and make circle.
         ListNode curr = head;
+        int length = 1;
         while (curr.next != null) {
-            count++;
             curr = curr.next;
+            length++;
         }
-        // create a circle.
-        curr.next = head;
-        k = k % count;
-        int offset = count - k - 1;
+        curr.next = head; // make circle.
         curr = head;
+        k %= length;  // notice!
+        int offset = length - k - 1; // we need move offset steps.
         while (offset > 0) {
-            curr = curr.next; 
+            curr = curr.next;
             offset--;
         }
-        head = curr.next;
+        ListNode newHead = curr.next;
         curr.next = null;
-        return head;
+        return newHead;
     }
 }
