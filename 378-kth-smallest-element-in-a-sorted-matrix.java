@@ -1,39 +1,41 @@
 class Solution {
-    public int kthSmallest(int[][] matrix, int k) {
-        if (matrix == null || matrix.length == 0 || matrix[0].length == 0 || k <= 0) {
-            return -1;
+    class Coordinate {
+        int x;
+        int y;
+        public Coordinate(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
-        int start = matrix[0][0];
-        int end = matrix[matrix.length - 1][matrix[0].length - 1];
-        while (start + 1 < end) {
-            int mid = start + (end - start) / 2;
-            if (countSmallerOrEquals(matrix, mid) >= k) {
-                end = mid;
-            } else {
-                start = mid;
-            }
-        }
-        if (countSmallerOrEquals(matrix, start) >= k) {
-            return start;
-        }
-        return end;
     }
-    private int countSmallerOrEquals(int[][] matrix, int target) {
-        int ans = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            if (matrix[i][matrix[0].length - 1] <= target) {
-                ans += matrix[0].length;
-            } else {
-                for (int j = 0; j < matrix[0].length; j++) {
-                    if (matrix[i][j] <= target) {
-                        ans += 1;
-                    } else {
-                        break;
-                    }
-                }
+    public int kthSmallest(int[][] matrix, int k) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return 0;
+        }
+        PriorityQueue<Coordinate> heap = new PriorityQueue<>((c1, c2) -> {
+            return Integer.compare(matrix[c1.x][c1.y], matrix[c2.x][c2.y]);
+        });
+        boolean[][] used = new boolean[matrix.length][matrix[0].length];
+        heap.offer(new Coordinate(0, 0));
+        used[0][0] = true;
+        for (int i = 0; i < k - 1; i++) {
+            Coordinate curr = heap.poll();
+            // right
+            Coordinate right = new Coordinate(curr.x, curr.y + 1);
+            if (isValid(right, matrix) && !used[right.x][right.y]) {
+                heap.offer(right);
+                used[right.x][right.y] = true;
+            }
+            // bottom
+            Coordinate bottom = new Coordinate(curr.x + 1, curr.y);
+            if (isValid(bottom, matrix) && !used[bottom.x][bottom.y]) {
+                heap.offer(bottom);
+                used[bottom.x][bottom.y] = true;
             }
         }
-        return ans;
-        
+        Coordinate ans = heap.peek();
+        return matrix[ans.x][ans.y];
+    }
+    private boolean isValid(Coordinate c, int[][] matrix) {
+        return 0 <= c.x && c.x < matrix.length && 0 <= c.y && c.y < matrix[0].length;
     }
 }
