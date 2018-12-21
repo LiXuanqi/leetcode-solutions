@@ -1,27 +1,28 @@
 class Solution {
     public List<String> generateParenthesis(int n) {
-        List<String> list = new ArrayList<>();
+        List<String> ans = new ArrayList<>();
         if (n <= 0) {
-            return list;
+            return ans;
         }
-        dfs(n, new StringBuilder(), 0, 0, list);
-        return list;
+        dfs(n, 0, 0, new StringBuilder(), ans);
+        return ans;
     }
-    private void dfs(int n, StringBuilder sb, int left, int right, List<String> result) {
+    private void dfs(int n, int left, int right, StringBuilder sb, List<String> ans) {
         if (left + right == n * 2) {
             if (left == right) {
-                result.add(sb.toString());
+                ans.add(sb.toString());
             }
             return;
         }
         if (left < right) {
             return;
         }
-        sb.append('(');
-        dfs(n, sb, left + 1, right, result);
+        sb.append("(");
+        dfs(n, left + 1, right, sb, ans);
         sb.deleteCharAt(sb.length() - 1);
-        sb.append(')');
-        dfs(n, sb, left, right + 1, result);
+        
+        sb.append(")");
+        dfs(n, left, right + 1, sb, ans);
         sb.deleteCharAt(sb.length() - 1);
     }
 }
