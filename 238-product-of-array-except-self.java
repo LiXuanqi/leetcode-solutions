@@ -3,21 +3,26 @@ class Solution {
         if (nums == null || nums.length == 0) {
             return null;
         }
-        int[] dpLeft = new int[nums.length + 2];
-        int[] dpRight = new int[nums.length + 2];
-        dpLeft[0] = 1;
-        dpRight[0] = 1;
-        dpLeft[dpLeft.length - 1] = 1;
-        dpRight[dpRight.length - 1] = 1;
-        
-        for (int i = 1; i < dpLeft.length - 1; i++) {
-            dpLeft[i] = dpLeft[i - 1] * nums[i - 1];
-            dpRight[dpRight.length - 1 - i] = dpRight[dpRight.length - i] * nums[nums.length - i];
+        int[] leftProducts = new int[nums.length];
+        int[] rightProducts = new int[nums.length];
+        int product = 1;
+        for (int i = 0; i < nums.length; i++) {
+            product *= nums[i];
+            leftProducts[i] = product;
         }
-        int[] result = new int[nums.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = dpLeft[i] * dpRight[i + 2];
+        product = 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            product *= nums[i];
+            rightProducts[i] = product;
         }
-        return result;
+        int[] ans = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            int left = i > 0 ? leftProducts[i - 1] : 1;
+            int right = i < nums.length - 1 ? rightProducts[i + 1] : 1;
+            ans[i] = left * right;
+        }
+        return ans;
     }
+    // 1  2  6 24
+    // 24 24 12 4
 }
