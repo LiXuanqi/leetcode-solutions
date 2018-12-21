@@ -10,11 +10,14 @@ class Solution {
             map.put(list1[i], i);
         }
         for (int i = 0; i < list2.length; i++) {
+            if (i > minIndexSum) {
+                break;
+            }
             if (map.containsKey(list2[i])) {
                 int sum = i + map.get(list2[i]);
                 if (sum < minIndexSum) {
                     minIndexSum = sum;
-                    ans = new ArrayList<>();
+                    ans.clear();
                     ans.add(list2[i]);
                 } else if (sum == minIndexSum) {
                     ans.add(list2[i]);
@@ -22,6 +25,6 @@ class Solution {
             }
         }
 
-        return ans.stream().toArray(String[]::new);
+        return ans.toArray(new String[ans.size()]);
     }
 }
