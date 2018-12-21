@@ -12,21 +12,24 @@ class Solution {
         List<Interval> ans = new ArrayList<>();
         if (intervals == null || intervals.size() == 0) {
             return ans;
-        }   
+        }
         Collections.sort(intervals, (interval1, interval2) -> {
             return Integer.compare(interval1.start, interval2.start);
         });
-        Interval last = intervals.get(0);
-        for (int i = 1; i < intervals.size(); i++) {
-            Interval next = intervals.get(i);
-            if (last.end >= next.start) {
-                last.end = Math.max(last.end, next.end);
+        Interval prev = null;
+        for (Interval curr : intervals) {
+            if (prev == null) {
+                prev = curr;
             } else {
-                ans.add(last);
-                last = next;
+                if (prev.end < curr.start) {
+                    ans.add(prev);
+                    prev = curr;
+                } else {
+                    prev.end = Math.max(prev.end, curr.end);
+                }
             }
         }
-        ans.add(last);
+        ans.add(prev);
         return ans;
     }
 }
