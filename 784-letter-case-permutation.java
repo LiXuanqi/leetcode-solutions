@@ -1,26 +1,31 @@
 class Solution {
-  public List<String> letterCasePermutation(String S) {
-      List<String> solutions = new ArrayList<>();
-      dfs(new StringBuilder(S), 0, solutions);
-      return solutions;
-  }
-  private void dfs(StringBuilder sb, int index, List<String> solutions) {
-      if (index == sb.length()) {
-          solutions.add(sb.toString());
-          return;
-      }
-      System.out.println(Character.isAlphabetic(sb.charAt(index)));
-      if (Character.isAlphabetic(sb.charAt(index))) {
-          sb.setCharAt(index, Character.toUpperCase(sb.charAt(index)));
-          dfs(sb, index + 1, solutions);
-  
-          sb.setCharAt(index, Character.toLowerCase(sb.charAt(index)));     
-          dfs(sb, index + 1, solutions);
-      } else {
-          dfs(sb, index + 1, solutions);
-      }
-      
-      
-     
-  }
+    public List<String> letterCasePermutation(String S) {
+        List<String> ans = new ArrayList<>();
+        if (S == null || S.length() == 0) {
+            ans.add("");
+            return ans;
+        }
+        dfs(S, 0, new StringBuilder(), ans);
+        return ans;
+    }
+    private void dfs(String S, int index, StringBuilder sb, List<String> ans) {
+        if (index >= S.length()) {
+            if (sb.length() == S.length()) {
+                ans.add(sb.toString());
+            }
+            return;
+        }
+        if (Character.isLetter(S.charAt(index))) {
+            sb.append(Character.toUpperCase(S.charAt(index)));
+            dfs(S, index + 1, sb, ans);
+            sb.deleteCharAt(sb.length() - 1);
+            sb.append(Character.toLowerCase(S.charAt(index)));
+            dfs(S, index + 1, sb, ans);
+            sb.deleteCharAt(sb.length() - 1);
+        } else {
+            sb.append(S.charAt(index));
+            dfs(S, index + 1, sb, ans);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+    }
 }
