@@ -12,17 +12,15 @@ class Solution {
         if (intervals == null || intervals.length == 0) {
             return true;
         }
-        Arrays.sort(intervals, new Comparator<Interval>() {
-            @Override
-            public int compare(Interval interval1, Interval interval2) {
-                return interval1.start < interval2.start ? -1 : 1;
-            }
+        Arrays.sort(intervals, (interval1, interval2) -> {
+            return Integer.compare(interval1.start, interval2.start);
         });
-        
-        for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i].start < intervals[i - 1].end) {
+        int lastEnd = -1;
+        for (Interval interval : intervals) {
+            if (interval.start < lastEnd) {
                 return false;
             }
+            lastEnd = interval.end;
         }
         return true;
     }
