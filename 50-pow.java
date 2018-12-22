@@ -2,8 +2,9 @@ class Solution {
     public double myPow(double x, int n) {
         if (n < 0) {
             return 1 / pow(x, -n);
+        } else {
+            return pow(x, n);
         }
-        return pow(x, n);
     }
     private double pow(double x, int n) {
         if (n == 0) {
@@ -12,9 +13,11 @@ class Solution {
         if (n == 1) {
             return x;
         }
-        double half = pow(x, n / 2);
-        return n % 2 == 0 ? half * half : half * half * x;
+        double product = pow(x, n / 2);
+        if (n % 2 == 0) {
+            return product * product;
+        } else {
+            return product * product * x;
+        }
     }
 }
-// Time: log(n)
-// Space: log(n)
