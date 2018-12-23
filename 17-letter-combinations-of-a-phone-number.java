@@ -1,8 +1,8 @@
 class Solution {
     public List<String> letterCombinations(String digits) {
-        List<String> results = new ArrayList<>();
+        List<String> ans = new ArrayList<>();
         if (digits == null || digits.length() == 0) {
-            return results;
+            return ans;
         }
         Map<Character, String> map = new HashMap<>();
         map.put('2', "abc");
@@ -13,22 +13,24 @@ class Solution {
         map.put('7', "pqrs");
         map.put('8', "tuv");
         map.put('9', "wxyz");
-        dfs(digits, 0, map, results, new StringBuilder());
-        return results;
+        dfs(map, digits, 0, new StringBuilder(), ans);
+        return ans;
     }
-    private void dfs(String digits, int level, Map<Character, String> map, List<String> solutions, StringBuilder sb) {
-        if (level >= digits.length()) {
-            solutions.add(sb.toString());
+    private void dfs(Map<Character, String> map, String digits, int index, StringBuilder sb, List<String> ans) {
+        if (index >= digits.length()) {
+            ans.add(sb.toString());
             return;
         }
-        if (digits.charAt(level) == '1' || digits.charAt(level) == '0') {
-            dfs(digits, level + 1, map, solutions, sb);
-            return;
-        }
-        for (char c : map.get(digits.charAt(level)).toCharArray()) {
-            sb.append(c);
-            dfs(digits, level + 1, map, solutions, sb);
-            sb.deleteCharAt(sb.length() - 1);
+        char c = digits.charAt(index);
+        if (map.containsKey(c)) {
+            String str = map.get(c);
+            for (int i = 0; i < str.length(); i++) {
+                sb.append(str.charAt(i));
+                dfs(map, digits, index + 1, sb, ans);
+                sb.deleteCharAt(sb.length() - 1);
+            }
+        } else {
+            dfs(map, digits, index + 1, sb, ans);
         }
     }
 }
