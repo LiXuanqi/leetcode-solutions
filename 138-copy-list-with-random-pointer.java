@@ -12,13 +12,14 @@ public class Solution {
             return null;
         }
         Map<RandomListNode, RandomListNode> map = new HashMap<>();
-        // copy all nodes.
         RandomListNode curr = head;
+        // copy.
         while (curr != null) {
-            map.put(curr, new RandomListNode(curr.label));
+            RandomListNode copy = new RandomListNode(curr.label);
+            map.put(curr, copy);
             curr = curr.next;
         }
-        // next, random pointers
+        // link.
         curr = head;
         while (curr != null) {
             map.get(curr).next = map.get(curr.next);
