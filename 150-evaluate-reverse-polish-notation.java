@@ -1,34 +1,27 @@
 class Solution {
-  public int evalRPN(String[] tokens) {
-      Stack<Integer> stack = new Stack<>();
-      for (String token : tokens) {
-          if (token.equals("+")) {
-              int first = stack.pop();
-              int second = stack.pop();
-              stack.push(first + second);
-          } else if (token.equals("-")) {
-              int first = stack.pop();
-              int second = stack.pop();
-              stack.push(second - first);
-          } else if (token.equals("*")) {
-              int first = stack.pop();
-              int second = stack.pop();
-              stack.push(first * second);
-          } else if (token.equals("/")) {
-              int first = stack.pop();
-              int second = stack.pop();
-              stack.push(second / first);
-          } else {
-              stack.push(Integer.parseInt(token));
-          }
-      }
-      return stack.pop();
-  }
+    public int evalRPN(String[] tokens) {
+        if (tokens == null || tokens.length == 0) {
+            return 0;
+        }
+        Deque<Integer> nums = new LinkedList<>();
+        String sign = "+-*/";
+        for (String token : tokens) {
+            if (sign.indexOf(token) != -1) {
+                int num1 = nums.pollFirst();
+                int num2 = nums.pollFirst();
+                if (token.equals("+")) {
+                    nums.offerFirst(num1 + num2);
+                } else if (token.equals("-")) {
+                    nums.offerFirst(num2 - num1);
+                } else if (token.equals("*")) {
+                    nums.offerFirst(num2 * num1);
+                } else if (token.equals("/")) {
+                    nums.offerFirst(num2 / num1);
+                }
+            } else {
+                nums.offerFirst(Integer.parseInt(token));
+            }
+        }
+        return nums.pollFirst();
+    }
 }
-
-// Input: ["2", "1", "+", "3", "*"]
-// Stack || 2 1
-// +    =>    2 + 1
-// Stack ||  3
-// Stack ||  3   3
-// *
