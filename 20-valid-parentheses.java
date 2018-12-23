@@ -8,16 +8,17 @@ class Solution {
         map.put(']', '[');
         map.put('}', '{');
         Deque<Character> stack = new LinkedList<>();
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (c == ')' || c == '}' || c == ']') {
-                if (map.get(c) != stack.pollFirst()) {
-                    return false;
-                }
-            } else {
+        for (char c : s.toCharArray()) {
+            if (!map.containsKey(c)) {
                 stack.offerFirst(c);
+            } else {
+                if (stack.peekFirst() != map.get(c)) {
+                    return false;
+                } else {
+                    stack.pollFirst();
+                }
             }
         }
-        return stack.isEmpty(); // All parentheses should be matched.
+        return stack.isEmpty();
     }
 }
