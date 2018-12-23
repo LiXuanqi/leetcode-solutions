@@ -1,25 +1,20 @@
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int total = m + n - 1;
-        while (m > 0 && n > 0) {
-            if (nums1[m - 1] <= nums2[n - 1]) {
-                nums1[total] = nums2[n - 1];
-                n--;
+        int pointer1 = m - 1;
+        int pointer2 = n - 1;
+        int curr = nums1.length - 1;
+        while (pointer1 >= 0 && pointer2 >= 0) {
+            if (nums1[pointer1] > nums2[pointer2]) {
+                nums1[curr--] = nums1[pointer1--];
             } else {
-                nums1[total] = nums1[m - 1];
-                m--;
+                nums1[curr--] = nums2[pointer2--];
             }
-            total--;
         }
-        while (m > 0) {
-            nums1[total] = nums1[m - 1];
-            m--;
-            total--;
+        while (pointer1 >= 0) {
+            nums1[curr--] = nums1[pointer1--];
         }
-        while (n > 0) {
-            nums1[total] = nums2[n - 1];
-            n--;
-            total--;
+        while (pointer2 >= 0) {
+            nums1[curr--] = nums2[pointer2--];
         }
     }
 }
