@@ -1,35 +1,36 @@
 class Solution {
     public int calculate(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-        int sign = 1;
-        int result = 0;
         Deque<Integer> stack = new LinkedList<>();
+        int sign = 1; // '1' represents '+', '-1' represents '-'
+        int res = 0; // store temp result.
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (Character.isDigit(c)) {
+                // read number and calculate.
                 int num = 0;
                 while (i < s.length() && Character.isDigit(s.charAt(i))) {
-                    num = 10 * num + s.charAt(i) - '0';
+                    num = num * 10 + s.charAt(i) - '0';
                     i++;
                 }
-                i--;
-                result += sign * num;
+                i--; // notice!
+                res += sign * num;
             } else if (c == '+') {
                 sign = 1;
+                
             } else if (c == '-') {
                 sign = -1;
             } else if (c == '(') {
-                stack.offerFirst(sign);
-                stack.offerFirst(result);
+                // open a new space for calculating.
+                stack.offerFirst(sign); // sign before '('
+                stack.offerFirst(res);
                 sign = 1;
-                result = 0;
+                res = 0;
             } else if (c == ')') {
-                int prev = stack.pollFirst();
-                result = prev + stack.pollFirst() * result; 
-            }
+                int prevNum = stack.pollFirst();
+                int signBeforeParenthese = stack.pollFirst();
+                res = prevNum + signBeforeParenthese * res;
+            } 
         }
-        return result;
+        return res;
     }
 }
