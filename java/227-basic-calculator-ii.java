@@ -1,10 +1,7 @@
 class Solution {
     public int calculate(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-        char sign = '+';
         Deque<Integer> stack = new LinkedList<>();
+        char sign = '+';
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (Character.isDigit(c)) {
@@ -32,10 +29,10 @@ class Solution {
                 sign = c;
             }
         }
-        int result = 0;
+        int res = 0;
         while (!stack.isEmpty()) {
-            result += stack.pollFirst();
+            res += stack.pollFirst();
         }
-        return result;
+        return res;
     }
 }
