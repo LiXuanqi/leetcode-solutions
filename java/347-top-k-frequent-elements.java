@@ -5,23 +5,25 @@ class Solution {
             return ans;
         }
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
         List[] bukkits = new List[nums.length + 1];
-        for (Integer key : map.keySet()) {
-            if (bukkits[map.get(key)] == null) {
-                bukkits[map.get(key)] = new ArrayList<>();
+        for (int key : map.keySet()) {
+            int freq = map.get(key);
+            if (bukkits[freq] == null) {
+                bukkits[freq] = new ArrayList<>();
             }
-            bukkits[map.get(key)].add(key);
+            bukkits[freq].add(key);
         }
+        // iterate from tail.
         for (int i = bukkits.length - 1; i >= 0; i--) {
             if (k <= 0) {
                 break;
             }
             if (bukkits[i] != null) {
-                ans.addAll(bukkits[i]);
                 k -= bukkits[i].size();
+                ans.addAll(bukkits[i]);
             }
         }
         return ans;
