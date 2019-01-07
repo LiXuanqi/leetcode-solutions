@@ -13,47 +13,38 @@ class Solution {
         if (board == null || board.length == 0 || board[0].length == 0) {
             return;
         }
-        char[][] ans = new char[board.length][board[0].length];
-        for (char[] row : ans) {
-            Arrays.fill(row, 'X');
-        }
-        boolean[][] visited = new boolean[board.length][board[0].length];
-        for (int i = 0; i < board.length; i++) {
-            if (board[i][0] == 'O') {
-                bfs(board, ans, i, 0, visited);
-            }
-            if (board[i][board[0].length - 1] == 'O') {
-                bfs(board, ans, i, board[0].length - 1, visited);
-            }
-        }
-        for (int i = 0; i < board[0].length; i++) {
-            if (board[0][i] == 'O' ) {
-                bfs(board, ans, 0, i, visited);
-            }
-            if (board[board.length - 1][i] == 'O') {
-                bfs(board, ans, board.length - 1, i, visited);
-            }
-        }
-        // copy back.
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                board[i][j] = ans[i][j];
+                // 4 borders.
+                if (i == 0 || i == board.length - 1 || j == 0 || j == board[0].length - 1) {
+                    if (board[i][j] == 'O') {
+                        bfs(board, i, j);
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j] == 'B') {
+                    board[i][j] = 'O';
+                } else if (board[i][j] == 'O') {
+                    board[i][j] = 'X';
+                }
             }
         }
     }
-    private void bfs(char[][] board, char[][] ans, int x, int y, boolean[][] visited) {
+    private void bfs(char[][] board, int x, int y) {
         Queue<Coordinate> queue = new LinkedList<>();
         queue.offer(new Coordinate(x, y));
-        visited[x][y] = true;
+        board[x][y] = 'B'; // Notice! if change the value when we poll out, one Point maybe put in the queue multiple times.
         while (!queue.isEmpty()) {
             Coordinate curr = queue.poll();
-            ans[curr.x][curr.y] = 'O';
             for (int i = 0; i < 4; i++) {
                 int nextX = curr.x + directionX[i];
                 int nextY = curr.y + directionY[i];
-                if (isValid(board, nextX, nextY) && !visited[nextX][nextY] && board[nextX][nextY] == 'O') {
+                if (isValid(board, nextX, nextY) && board[nextX][nextY] == 'O') {
                     queue.offer(new Coordinate(nextX, nextY));
-                    visited[nextX][nextY] = true;
+                    board[nextX][nextY] = 'B';
                 }
             }
         }
