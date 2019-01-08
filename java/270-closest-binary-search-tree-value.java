@@ -8,24 +8,21 @@
  * }
  */
 class Solution {
-    int result;
-    double diff = Double.MAX_VALUE;
     public int closestValue(TreeNode root, double target) {
-        if (root == null) {
-            return -1;
-        }
-        TreeNode curr = root;
-        while (curr != null) {
-            if (Math.abs(curr.val - target) < diff) {
-                diff = Math.abs(curr.val - target);
-                result = curr.val;
+        double minDiff = Double.MAX_VALUE;
+        int ans = root.val;
+        while (root != null) {
+            double diff = Math.abs(root.val - target);
+            if (diff < minDiff) {
+                minDiff = diff;
+                ans = root.val;
             }
-            if (curr.val > target) {
-                curr = curr.left;
+            if (root.val < target) {
+                root = root.right;
             } else {
-                curr = curr.right;
+                root = root.left;
             }
         }
-        return result;
+        return ans;
     }
 }
