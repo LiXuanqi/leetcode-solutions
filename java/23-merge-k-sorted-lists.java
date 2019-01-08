@@ -11,15 +11,15 @@ class Solution {
         if (lists == null || lists.length == 0) {
             return null;
         }
-        ListNode dummy = new ListNode(-1);
-        PriorityQueue<ListNode> heap = new PriorityQueue<ListNode>((node1, node2) -> {
-            return node1.val < node2.val ? -1 : 1;
+        PriorityQueue<ListNode> heap = new PriorityQueue<>((n1, n2) -> {
+            return Integer.compare(n1.val, n2.val);
         });
         for (ListNode list : lists) {
             if (list != null) {
-                heap.offer(list);      
+                heap.offer(list);
             }
         }
+        ListNode dummy = new ListNode(-1);
         ListNode curr = dummy;
         while (!heap.isEmpty()) {
             ListNode node = heap.poll();
@@ -29,7 +29,6 @@ class Solution {
                 heap.offer(node.next);
             }
         }
-        curr.next = null;
         return dummy.next;
     }
 }
