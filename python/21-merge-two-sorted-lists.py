@@ -13,7 +13,7 @@ class Solution:
         """
         dummy = ListNode(-1)
         curr = dummy
-        while l1 != None and l2 != None:
+        while l1 and l2:
             if l1.val < l2.val:
                 curr.next = l1
                 l1 = l1.next
@@ -21,12 +21,5 @@ class Solution:
                 curr.next = l2
                 l2 = l2.next
             curr = curr.next
-        while l1 != None:
-            curr.next = l1
-            l1 = l1.next
-            curr = curr.next
-        while l2 != None:
-            curr.next = l2
-            l2 = l2.next
-            curr = curr.next
+        curr.next = l1 if l1 else l2
         return dummy.next
