@@ -5,11 +5,11 @@ class Solution {
         }
         Map<String, List<String>> map = new HashMap<>();
         for (String str : strs) {
-            char[] aux = str.toCharArray();
-            Arrays.sort(aux);
-            String word  = String.valueOf(aux);
+            char[] carray = str.toCharArray();
+            Arrays.sort(carray);
+            String word = String.valueOf(carray);
             if (!map.containsKey(word)) {
-                map.put(word, new ArrayList<>());
+                map.put(word, new ArrayList<>());   
             }
             map.get(word).add(str);
         }
