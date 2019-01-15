@@ -1,57 +1,51 @@
 class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        if (numCourses <= 0) {
-            return false;
+        if (numCourses <= 0 || prerequisites == null || prerequisites.length == 0 || prerequisites[0].length != 2) {
+            return true;        
         }
-        if (prerequisites == null || prerequisites.length == 0 || prerequisites[0].length == 0) {
-            return true;
-        }
-        Map<Integer, Set<Integer>> graph = buildGraph(prerequisites);
+        Map<Integer, List<Integer>> map = buildGraph(prerequisites);
+        // count indegrees
         Map<Integer, Integer> indegrees = new HashMap<>();
-        for (Map.Entry<Integer, Set<Integer>> entry : graph.entrySet()) {
-            for (int num : entry.getValue()) {
-                indegrees.put(num, indegrees.getOrDefault(num, 0) + 1);
+        for (Map.Entry<Integer, List<Integer>> entry : map.entrySet()) {
+            for (int course : entry.getValue()) {
+                indegrees.put(course, indegrees.getOrDefault(course, 0) + 1);
             }
         }
-        
-        Queue<Integer> queue = new LinkedList<>();
+        // bfs for indegree = 0
         boolean[] visited = new boolean[numCourses];
+        Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < numCourses; i++) {
             if (!indegrees.containsKey(i)) {
                 queue.offer(i);
+                visited[i] = true;
             }
         }
-        
         while (!queue.isEmpty()) {
             int curr = queue.poll();
-            // System.out.println(curr);
-            visited[curr] = true;
-            if (graph.containsKey(curr)) {
-                for (int nextNode : graph.get(curr)) {
-                    indegrees.put(nextNode, indegrees.get(nextNode) - 1);
-                    if (indegrees.get(nextNode) == 0) {
-                        queue.offer(nextNode);
+            if (map.containsKey(curr)) {
+                for (int next : map.get(curr)) {
+                    indegrees.put(next, indegrees.get(next) - 1);
+                    if (indegrees.get(next) == 0 && !visited[next]) {
+                        queue.offer(next);
+                        visited[next] = true;
                     }
-                }   
+                }
             }
-          
         }
-        
-        for (int i = 0; i < visited.length; i++) {
-            if (!visited[i]) {
+        for (boolean visit : visited) {
+            if (!visit) {
                 return false;
             }
-            // System.out.print(visited[i] + " ");
         }
         return true;
     }
-    private Map<Integer, Set<Integer>> buildGraph(int[][] nums) {
-        Map<Integer, Set<Integer>> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (!map.containsKey(nums[i][1])) {
-                map.put(nums[i][1], new HashSet<>());
+    private Map<Integer, List<Integer>> buildGraph(int[][] prerequisites) {
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        for (int[] prerequisite : prerequisites) {
+            if (!map.containsKey(prerequisite[1])) {
+                map.put(prerequisite[1], new ArrayList<>());
             }
-            map.get(nums[i][1]).add(nums[i][0]);
+            map.get(prerequisite[1]).add(prerequisite[0]);
         }
         return map;
     }
