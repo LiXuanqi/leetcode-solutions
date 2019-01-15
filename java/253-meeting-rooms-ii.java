@@ -12,23 +12,23 @@ class Solution {
         if (intervals == null || intervals.length == 0) {
             return 0;
         }
-        // sort by start time.
-        Arrays.sort(intervals, (interval1, interval2) -> {
-            return Integer.compare(interval1.start, interval2.start);
+        Arrays.sort(intervals, (i1, i2) -> {
+            return Integer.compare(i1.start, i2.start);
         });
-        PriorityQueue<Interval> heap = new PriorityQueue<>((interval1, interval2) -> {
-            return Integer.compare(interval1.end, interval2.end);
+        PriorityQueue<Interval> heap = new PriorityQueue<>((i1, i2) -> {
+            return Integer.compare(i1.end, i2.end);
         });
         for (Interval interval : intervals) {
             if (heap.isEmpty()) {
                 heap.offer(interval);
             } else {
-                if (heap.peek().end <= interval.start) {
-                    Interval curr = heap.poll();
-                    curr.end = interval.end;
-                    heap.offer(curr);
-                } else {
+                Interval curr = heap.peek();
+                if (curr.end > interval.start) {
                     heap.offer(interval);
+                } else {
+                    curr.end = interval.end;
+                    heap.poll();
+                    heap.offer(curr);
                 }
             }
         }
