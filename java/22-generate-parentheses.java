@@ -17,11 +17,11 @@ class Solution {
         if (left < right) {
             return;
         }
-        sb.append("(");
+        sb.append('(');
         dfs(n, left + 1, right, sb, ans);
         sb.deleteCharAt(sb.length() - 1);
         
-        sb.append(")");
+        sb.append(')');
         dfs(n, left, right + 1, sb, ans);
         sb.deleteCharAt(sb.length() - 1);
     }
