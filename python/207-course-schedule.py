@@ -39,6 +39,6 @@ def buildGraph(prerequisites):
     graph = {}
     for prerequisite in prerequisites:
         if prerequisite[1] not in graph:
-            graph[prerequisite[1]] = [];
+            graph[prerequisite[1]] = []
         graph[prerequisite[1]].append(prerequisite[0])
     return graph

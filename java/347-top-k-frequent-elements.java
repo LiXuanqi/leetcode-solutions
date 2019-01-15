@@ -10,19 +10,19 @@ class Solution {
         }
         List[] bukkits = new List[nums.length + 1];
         for (int key : map.keySet()) {
-            int freq = map.get(key);
-            if (bukkits[freq] == null) {
-                bukkits[freq] = new ArrayList<>();
+            int frequent = map.get(key);
+            if (bukkits[frequent] == null) {
+                bukkits[frequent] = new ArrayList<>();
             }
-            bukkits[freq].add(key);
+            bukkits[frequent].add(key);
         }
-        // iterate from tail.
+        int count = 0;
         for (int i = bukkits.length - 1; i >= 0; i--) {
-            if (k <= 0) {
+            if (count == k) {
                 break;
             }
             if (bukkits[i] != null) {
-                k -= bukkits[i].size();
+                count += bukkits[i].size();
                 ans.addAll(bukkits[i]);
             }
         }
