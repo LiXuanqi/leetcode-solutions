@@ -1,14 +1,13 @@
 class Trie {
     class TrieNode {
+        Map<Character, TrieNode> neighbors;
         boolean isWord;
-        Map<Character, TrieNode> edges;
         public TrieNode() {
-            isWord = false;
-            edges = new HashMap<>();
+            neighbors = new HashMap<>();
         }
     }
-    TrieNode root;
     /** Initialize your data structure here. */
+    TrieNode root;
     public Trie() {
         root = new TrieNode();
     }
@@ -17,10 +16,12 @@ class Trie {
     public void insert(String word) {
         TrieNode curr = root;
         for (int i = 0; i < word.length(); i++) {
-            if (!curr.edges.containsKey(word.charAt(i))) {
-                curr.edges.put(word.charAt(i), new TrieNode());
+            char c = word.charAt(i);
+            if (!curr.neighbors.containsKey(c)) {
+                TrieNode next = new TrieNode();
+                curr.neighbors.put(c, new TrieNode());
             }
-            curr = curr.edges.get(word.charAt(i));
+            curr = curr.neighbors.get(c);
         }
         curr.isWord = true;
     }
@@ -29,10 +30,11 @@ class Trie {
     public boolean search(String word) {
         TrieNode curr = root;
         for (int i = 0; i < word.length(); i++) {
-            if (!curr.edges.containsKey(word.charAt(i))) {
+            char c = word.charAt(i);
+            if (!curr.neighbors.containsKey(c)) {
                 return false;
             }
-            curr = curr.edges.get(word.charAt(i));
+            curr = curr.neighbors.get(c);
         }
         return curr.isWord;
     }
@@ -41,10 +43,11 @@ class Trie {
     public boolean startsWith(String prefix) {
         TrieNode curr = root;
         for (int i = 0; i < prefix.length(); i++) {
-            if (!curr.edges.containsKey(prefix.charAt(i))) {
+            char c = prefix.charAt(i);
+            if (!curr.neighbors.containsKey(c)) {
                 return false;
             }
-            curr = curr.edges.get(prefix.charAt(i));
+            curr = curr.neighbors.get(c);
         }
         return true;
     }
