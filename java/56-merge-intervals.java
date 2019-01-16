@@ -13,23 +13,24 @@ class Solution {
         if (intervals == null || intervals.size() == 0) {
             return ans;
         }
-        Collections.sort(intervals, (interval1, interval2) -> {
-            return Integer.compare(interval1.start, interval2.start);
+        Collections.sort(intervals, (i1, i2) -> {
+            return Integer.compare(i1.start, i2.start);
         });
-        Interval prev = null;
+        Interval last = null;
         for (Interval curr : intervals) {
-            if (prev == null) {
-                prev = curr;
+            if (last == null) {
+                last = curr;
             } else {
-                if (prev.end < curr.start) {
-                    ans.add(prev);
-                    prev = curr;
+                if (last.end >= curr.start) {
+                    // merge
+                    last.end = Math.max(last.end, curr.end);
                 } else {
-                    prev.end = Math.max(prev.end, curr.end);
+                    ans.add(last);
+                    last = curr;
                 }
             }
         }
-        ans.add(prev);
+        ans.add(last);
         return ans;
     }
 }
