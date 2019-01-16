@@ -18,6 +18,12 @@ class Solution {
             while (parent != parents.get(parent)) {
                 parent = parents.get(parent);
             }
+            int curr = x;
+            while (curr != parents.get(curr)) {
+                int next = parents.get(curr);
+                parents.put(curr, parent);
+                curr = next;
+            }
             return parent;
         }
         public int count() {
