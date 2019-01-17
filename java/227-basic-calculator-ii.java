@@ -1,6 +1,9 @@
 class Solution {
     public int calculate(String s) {
-        Deque<Integer> stack = new LinkedList<>();
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        Stack<Integer> stack = new Stack<>();
         char sign = '+';
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
@@ -13,15 +16,13 @@ class Solution {
                 }
                 i--;
                 if (sign == '+') {
-                    stack.offerFirst(num);
+                    stack.push(num);
                 } else if (sign == '-') {
-                    stack.offerFirst(-num);
+                    stack.push(-num);
                 } else if (sign == '*') {
-                    int prev = stack.pollFirst();
-                    stack.offerFirst(prev * num);
+                    stack.push(stack.pop() * num);
                 } else if (sign == '/') {
-                    int prev = stack.pollFirst();
-                    stack.offerFirst(prev / num);
+                    stack.push(stack.pop() / num);
                 }
             } else if (c == ' ') {
                 continue;
@@ -29,10 +30,6 @@ class Solution {
                 sign = c;
             }
         }
-        int res = 0;
-        while (!stack.isEmpty()) {
-            res += stack.pollFirst();
-        }
-        return res;
+        return stack.stream().mapToInt(i -> i).sum();
     }
 }
