@@ -5,42 +5,40 @@ class Solution {
         }
         return printCircle(matrix, 0, 0, matrix.length - 1, matrix[0].length - 1);
     }
-    private List<Integer> printCircle(int[][] matrix, int startRow, int startCol, int endRow, int endCol) {
-        if (startRow > endRow || startCol > endCol) {
-            return Collections.EMPTY_LIST;
-        }
+    private List<Integer> printCircle(int[][] matrix, int startX, int startY, int endX, int endY) {
         List<Integer> ans = new ArrayList<>();
-        if (startRow == endRow) {
-            for (int i = startCol; i <= endCol; i++) {
-                ans.add(matrix[startRow][i]);
+        if (startX > endX || startY > endY) {
+            return ans;
+        }
+        if (startX == endX) {
+            for (int i = startY; i <= endY; i++) {
+                ans.add(matrix[startX][i]);
             }
             return ans;
         }
-        if (startCol == endCol) {
-            for (int i = startRow; i <= endRow; i++) {
-                ans.add(matrix[i][startCol]);
+        if (startY == endY) {
+            for (int i = startX; i <= endX; i++) {
+                ans.add(matrix[i][startY]);
             }
-            return ans;
+             return ans;
         }
-        // print circle.
         // top
-        for (int i = startCol; i < endCol; i++) {
-            ans.add(matrix[startRow][i]);
+        for (int i = startY; i < endY; i++) {
+            ans.add(matrix[startX][i]);
         }
         // right
-        for (int i = startRow; i< endRow; i++) {
-            ans.add(matrix[i][endCol]);
+        for (int i = startX; i < endX; i++) {
+            ans.add(matrix[i][endY]);
         }
         // down
-        for (int i = endCol; i > startCol; i--) {
-            ans.add(matrix[endRow][i]);
+        for (int i = endY; i > startY; i--) {
+            ans.add(matrix[endX][i]);
         }
         // left
-        for (int i = endRow; i > startRow; i--) {
-            ans.add(matrix[i][startCol]);
+        for (int i = endX; i > startX; i--) {
+            ans.add(matrix[i][startY]);
         }
-        List<Integer> rest = printCircle(matrix, startRow + 1, startCol + 1, endRow - 1, endCol - 1);
-        ans.addAll(rest);
+        ans.addAll(printCircle(matrix, startX + 1, startY + 1, endX - 1, endY - 1));
         return ans;
     }
 }
