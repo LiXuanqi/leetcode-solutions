@@ -7,11 +7,18 @@ class Solution {
         dfs(candidates, 0, target, new ArrayList<>(), ans);
         return ans;
     }
-    private void dfs(int[] nums, int start, int target, List<Integer> temp, List<List<Integer>> ans) {
-        if (target <= 0) {
-            if (target == 0) {
-                ans.add(new ArrayList<>(temp));
-            }
+    private void dfs(
+        int[] nums, 
+        int start, 
+        int target, 
+        List<Integer> temp, 
+        List<List<Integer>> ans
+    ) {
+        if (target < 0) {
+            return;
+        }
+        if (target == 0) {
+            ans.add(new ArrayList<>(temp));
             return;
         }
         for (int i = start; i < nums.length; i++) {
