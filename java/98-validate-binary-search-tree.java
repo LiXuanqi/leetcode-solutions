@@ -21,3 +21,37 @@ class Solution {
         return isBST(root.left, min, root.val) && isBST(root.right, root.val, max);
     }
 }
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    long min = Long.MIN_VALUE;
+    boolean ans = true;
+    public boolean isValidBST(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        helper(root);
+        return ans;
+    } 
+    private void helper(TreeNode curr) {
+        if (curr == null) {
+            return;
+        }
+        helper(curr.left);
+        if (curr.val <= min) {
+            ans = false;
+            return;
+        }
+        min = (long) curr.val;
+        helper(curr.right);
+    }
+   
+}
