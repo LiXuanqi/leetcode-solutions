@@ -7,14 +7,14 @@ class Solution {
         int left = 0;
         int ans = 0;
         for (int right = 0; right < s.length(); right++) {
-            if (map.containsKey(s.charAt(right))) {
-                // move left.
-                left = Math.max(map.get(s.charAt(right)) + 1, left); // left never move back.
-            } 
-            map.put(s.charAt(right), right);
+            char c = s.charAt(right);
+            if (map.containsKey(c)) {
+                left = Math.max(left, map.get(c) + 1);
+            }
+            map.put(c, right);
             int length = right - left + 1;
-            ans = Math.max(length, ans);
+            ans = Math.max(ans, length);
         }
-        return ans;
+        return ans; 
     }
 }
