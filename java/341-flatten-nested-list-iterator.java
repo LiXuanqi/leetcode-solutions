@@ -16,31 +16,29 @@
  * }
  */
 public class NestedIterator implements Iterator<Integer> {
-    
-    Deque<NestedInteger> stack = new LinkedList<>();
-    
+    Stack<NestedInteger> stack = new Stack();
     public NestedIterator(List<NestedInteger> nestedList) {
         for (int i = nestedList.size() - 1; i >= 0; i--) {
-            stack.offerFirst(nestedList.get(i));
+            stack.push(nestedList.get(i));
         }
     }
 
     @Override
     public Integer next() {
-        return stack.pollFirst().getInteger();
+        hasNext();
+        return stack.pop().getInteger();
     }
 
     @Override
     public boolean hasNext() {
         while (!stack.isEmpty()) {
-            NestedInteger curr = stack.peekFirst();
-            if (curr.isInteger()) {
+            NestedInteger top = stack.peek();
+            if (top.isInteger()) {
                 return true;
             } else {
-                curr = stack.pollFirst();
-                List<NestedInteger> list = curr.getList();
+                List<NestedInteger> list = stack.pop().getList();
                 for (int i = list.size() - 1; i >= 0; i--) {
-                    stack.offerFirst(list.get(i));
+                    stack.push(list.get(i));
                 }
             }
         }
