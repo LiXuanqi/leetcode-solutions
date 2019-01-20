@@ -13,10 +13,8 @@ public class Solution {
         }
         Map<RandomListNode, RandomListNode> map = new HashMap<>();
         RandomListNode curr = head;
-        // copy
         while (curr != null) {
-            RandomListNode copy = new RandomListNode(curr.label);
-            map.put(curr, copy);
+            map.put(curr, new RandomListNode(curr.label));
             curr = curr.next;
         }
         // link
