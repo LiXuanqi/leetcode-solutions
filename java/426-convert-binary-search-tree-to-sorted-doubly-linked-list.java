@@ -15,32 +15,27 @@ class Node {
 };
 */
 class Solution {
+    Node prev;
     public Node treeToDoublyList(Node root) {
         if (root == null) {
             return null;
         }
-        Node left = treeToDoublyList(root.left);
-        Node right = treeToDoublyList(root.right);
-        root.left = root;
-        root.right = root;
-        return concatenate(concatenate(left, root), right);
+        Node dummy = new Node(-1, null, null);
+        prev = dummy;
+        helper(root);
+        // link tail and head.
+        prev.right = dummy.right;
+        dummy.right.left = prev;
+        return dummy.right;
     }
-    private Node concatenate(Node node1, Node node2) {
-        if (node1 == null && node2 == null) {
-            return null;
+    private void helper(Node curr) {
+        if (curr == null) {
+            return;
         }
-        if (node1 == null) {
-            return node2;
-        }
-        if (node2 == null) {
-            return node1;
-        }
-        Node node1Tail = node1.left;
-        Node node2Tail = node2.left;
-        node1Tail.right = node2;
-        node2.left = node1Tail;
-        node1.left = node2Tail;
-        node2Tail.right = node1;
-        return node1;
+        helper(curr.left);
+        curr.left = prev;
+        prev.right = curr;
+        prev = curr;
+        helper(curr.right);
     }
 }
