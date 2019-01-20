@@ -13,24 +13,29 @@ class Solution {
         map.put('7', "pqrs");
         map.put('8', "tuv");
         map.put('9', "wxyz");
-        dfs(map, digits, 0, new StringBuilder(), ans);
+        dfs(digits, 0, new StringBuilder(), ans, map);
         return ans;
     }
-    private void dfs(Map<Character, String> map, String digits, int index, StringBuilder sb, List<String> ans) {
+    private void dfs(
+        String digits,
+        int index,
+        StringBuilder sb,
+        List<String> ans,
+        Map<Character, String> map
+    ) {
         if (index >= digits.length()) {
             ans.add(sb.toString());
             return;
         }
         char c = digits.charAt(index);
         if (map.containsKey(c)) {
-            String str = map.get(c);
-            for (int i = 0; i < str.length(); i++) {
-                sb.append(str.charAt(i));
-                dfs(map, digits, index + 1, sb, ans);
+            for (char next : map.get(c).toCharArray()) {
+                sb.append(next);
+                dfs(digits, index + 1, sb, ans, map);
                 sb.deleteCharAt(sb.length() - 1);
             }
         } else {
-            dfs(map, digits, index + 1, sb, ans);
+            dfs(digits, index + 1, sb, ans, map);
         }
     }
 }
