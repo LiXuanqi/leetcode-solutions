@@ -3,18 +3,18 @@ class Solution {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        int ans = nums[0];
-        int max = ans;
-        int min = ans;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] < 0) {
-                int temp = max;
-                max = min;
-                min = temp;
+        int min = 1;
+        int max = 1;
+        int ans = Integer.MIN_VALUE;
+        for (int num : nums) {
+            if (num < 0) {
+                int temp = min;
+                min = max;
+                max = temp;
             }
-            max = Math.max(max * nums[i], nums[i]);
-            min = Math.min(min * nums[i], nums[i]);
-            ans = Math.max(ans, max);
+            max = Math.max(num, max * num);
+            min = Math.min(num, min * num);
+            ans = Math.max(max, ans);
         }
         return ans;
     }
