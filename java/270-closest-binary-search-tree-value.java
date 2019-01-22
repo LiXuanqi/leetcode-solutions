@@ -8,21 +8,29 @@
  * }
  */
 class Solution {
+    int ans = 0;
+    double minDiff = Double.MAX_VALUE;
     public int closestValue(TreeNode root, double target) {
-        double minDiff = Double.MAX_VALUE;
-        int ans = root.val;
-        while (root != null) {
-            double diff = Math.abs(root.val - target);
-            if (diff < minDiff) {
-                minDiff = diff;
-                ans = root.val;
-            }
-            if (root.val < target) {
-                root = root.right;
-            } else {
-                root = root.left;
-            }
+        if (root == null) {
+            return -1;
         }
+        findClosest(root, target);
         return ans;
+    }
+    private void findClosest(TreeNode root, double target) {
+        if (root == null) {
+            return;
+        }
+        double diff = Math.abs(root.val - target);
+        if (diff < minDiff) {
+            ans = root.val;
+            minDiff = diff;
+        }
+        if (root.val > target) {
+            findClosest(root.left, target);
+        }   
+        if (root.val < target) {
+            findClosest(root.right, target);
+        }
     }
 }
