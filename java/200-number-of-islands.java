@@ -7,8 +7,8 @@ class Solution {
             this.y = y;
         }
     }
-    int[] directionX = {0, 0, 1, -1};
-    int[] directionY = {1, -1, 0, 0};
+    private final static int[] directionX = {0, 0, 1, -1};
+    private final static int[] directionY = {1, -1, 0, 0};
     public int numIslands(char[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
@@ -17,9 +17,9 @@ class Solution {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == '1') {
-                    bfs(grid, i, j);
                     count++;
-                } 
+                    bfs(grid, i, j);
+                }
             }
         }
         return count;
@@ -43,5 +43,4 @@ class Solution {
     private boolean inBound(int x, int y, char[][] grid) {
         return 0 <= x && x < grid.length && 0 <= y && y < grid[0].length;
     }
-    
 }
