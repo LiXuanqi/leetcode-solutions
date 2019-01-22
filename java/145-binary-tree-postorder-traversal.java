@@ -13,31 +13,30 @@ class Solution {
         if (root == null) {
             return ans;
         }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
         TreeNode prev = null;
-        Deque<TreeNode> stack = new LinkedList<>();
-        stack.offerFirst(root);
         while (!stack.isEmpty()) {
-            TreeNode curr = stack.peekFirst();
-            // go down
+            TreeNode curr = stack.peek();
             if (prev == null || prev.left == curr || prev.right == curr) {
+                // go down
                 if (curr.left != null) {
-                    stack.offerFirst(curr.left);
+                    stack.push(curr.left);
                 } else if (curr.right != null) {
-                    stack.offerFirst(curr.right);
+                    stack.push(curr.right);
                 } else {
-                    ans.add(curr.val);
-                    stack.pollFirst();
-                }   
+                    ans.add(stack.pop().val);
+                }
             } else if (curr.left == prev) {
+                // from left subtree
                 if (curr.right != null) {
-                    stack.offerFirst(curr.right);
+                    stack.push(curr.right);
                 } else {
-                    ans.add(curr.val);
-                    stack.pollFirst(); 
+                    ans.add(stack.pop().val);
                 }
             } else {
-                 ans.add(curr.val);
-                 stack.pollFirst(); 
+                // from right subtree
+                ans.add(stack.pop().val);
             }
             prev = curr;
         }
