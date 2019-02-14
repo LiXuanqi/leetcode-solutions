@@ -27,7 +27,7 @@ def formatFilename(filename, language):
 def generateMarkdownTable(questions):
   table = """
   | ID   | Title | Java | Python |
-  | :----: | :-----: | :----: | :------: |
+  | :----: | :----- | :----: | :------: |
   """
   # items = []
   # for question in questions:
