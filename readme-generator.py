@@ -11,7 +11,7 @@ logger.setLevel(logging.INFO)
 
 # - Config
 choosedLanguages = ['python', 'java']
-TEMPLATE_TABLE_TAG = "{{%- TABLE -%}}"
+TEMPLATE_TABLE_TAG = "{%-- TABLE --%}"
 LANGUAGES = {
   'python': 'py',
   'java': 'java'
@@ -67,10 +67,12 @@ if __name__ == "__main__":
   # - Read template and generate README.md
   templatePath = "%s/%s" % (os.path.abspath(os.path.dirname(__file__)), 'README-template.md')
   readmePath = "%s/%s" % (os.path.abspath(os.path.dirname(__file__)), 'README.md')
-  with open(templatePath, 'r') as template, open(readmePath, 'w') as f:
+  with open('README-template.md', 'r') as template, open('README.md', 'w') as f:
     logger.info('Starting write file')
     for line in template.readlines():
-      if line == TEMPLATE_TABLE_TAG: 
+      print(line)
+      if TEMPLATE_TABLE_TAG in line: 
+        print('match')
         table = generateMarkdownTable(sortedQuestions)
         f.write(table)
       else:
