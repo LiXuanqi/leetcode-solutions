@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import os
 import logging
 import collections
@@ -6,7 +7,7 @@ import collections
 loggerFormat = '%(asctime)-15s %(message)s'
 logging.basicConfig(format=loggerFormat)
 logger = logging.getLogger('readme-generator')
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 
 # - Config
 choosedLanguages = ['python', 'java']
@@ -25,15 +26,14 @@ def formatFilename(filename, language):
   return index, title, url
 
 def generateMarkdownTable(questions):
+  logger.info('Starting generate markdown table.')
   table = """
   | ID   | Title | Java | Python |
   | :----: | :----- | :----: | :------: |
   """
-  # items = []
-  # for question in questions:
-  #   items.append(question.toMarkdown())
   items = list(map(lambda item: item.toMarkdown(), questions.values()))
   table = table + "\n".join(items)
+  logger.info('Finish generate markdown table.')
   return table
 
 class Question:
@@ -53,6 +53,7 @@ class Question:
 
 
 if __name__ == "__main__":
+  logger.info('Starting read local solutions and generate question list')
   # - get all file names
   questions = {}
   for language in choosedLanguages:
@@ -62,13 +63,16 @@ if __name__ == "__main__":
         questions[index] = Question(index, title)
       questions[index].addSolution(language, url)
   sortedQuestions = collections.OrderedDict(sorted(questions.items()))
-  
+  logger.info('Finish generate question list, there are %d questions' % (len(sortedQuestions)))  
   # - Read template and generate README.md
   with open('README-template.md', 'r') as template, open('README.md', 'w') as f:
+    logger.info('Starting write file')
     for line in template.readlines():
       if line == TEMPLATE_TABLE_TAG: 
         table = generateMarkdownTable(sortedQuestions)
         f.write(table)
       else:
         f.write(line)
+    logger.info('Finished!')
+    
  
