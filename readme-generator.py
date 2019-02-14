@@ -57,7 +57,7 @@ if __name__ == "__main__":
   # - get all file names
   questions = {}
   for language in choosedLanguages:
-    for filename in os.listdir('./' + language):
+    for filename in os.listdir("%s/%s" % (os.path.abspath(os.path.dirname(__file__)), language)):
       index, title, url = formatFilename(filename, language)
       if index not in questions:
         questions[index] = Question(index, title)
@@ -65,7 +65,9 @@ if __name__ == "__main__":
   sortedQuestions = collections.OrderedDict(sorted(questions.items()))
   logger.info('Finish generate question list, there are %d questions' % (len(sortedQuestions)))  
   # - Read template and generate README.md
-  with open('README-template.md', 'r') as template, open('README.md', 'w') as f:
+  templatePath = "%s/%s" % (os.path.abspath(os.path.dirname(__file__)), 'README-template.md')
+  readmePath = "%s/%s" % (os.path.abspath(os.path.dirname(__file__)), 'README.md')
+  with open(templatePath, 'r') as template, open(readmePath, 'w') as f:
     logger.info('Starting write file')
     for line in template.readlines():
       if line == TEMPLATE_TABLE_TAG: 
