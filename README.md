@@ -1,15 +1,13 @@
-# LeetCode-train
+# LeetCode-solutions
 ![Leetcode](https://leetcode.com/static/images/LeetCode_Sharing.png)
 
 This repository records my solutions on LeetCode, written in **Java and Python**.
 
 ❤️ Notes and summaries are in my [blog](http://lixuanqi.me).
 
-[1](./python/1-two-sum.py)
-
 
   | ID   | Title | Java | Python |
-  | :----: | :-----: | :----: | :------: |
+  | :----: | :----- | :----: | :------: |
   |1|two sum|[java](./java/1-two-sum.java)|[python](./python/1-two-sum.py)|
 |2|add two numbers|[java](./java/2-add-two-numbers.java)||
 |3|longest substring without repeating characters|[java](./java/3-longest-substring-without-repeating-characters.java)||
