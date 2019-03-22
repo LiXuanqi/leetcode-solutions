@@ -63,7 +63,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |53|maximum subarray|[java](./java/53-maximum-subarray.java)||
 |54|spiral matrix|[java](./java/54-spiral-matrix.java)||
 |55|jump game|[java](./java/55-jump-game.java)||
-|56|merge intervals|[java](./java/56-merge-intervals.java)||
+|56|merge intervals|[java](./java/56-merge-intervals.java)|[python](./python/56-merge-intervals.py)|
 |57|insert interval|[java](./java/57-insert-interval.java)||
 |58|length of last word|[java](./java/58-length-of-last-word.java)||
 |60|permutation sequence|[java](./java/60-permutation-sequence.java)||
@@ -150,12 +150,16 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |160|intersection of two linked lists|[java](./java/160-intersection-of-two-linked-lists.java)||
 |161|one edit distance|[java](./java/161-one-edit-distance.java)||
 |162|find peak element|[java](./java/162-find-peak-element.java)||
+|163|missing ranges||[python](./python/163-missing-ranges.py)|
+|165|compare version numbers||[python](./python/165-compare-version-numbers.py)|
 |167|two sum ii input array is sorted|[java](./java/167-two-sum-ii-input-array-is-sorted.java)||
 |168|excel sheet column title|[java](./java/168-excel-sheet-column-title.java)||
 |169|majority element|[java](./java/169-majority-element.java)||
 |170|two sum ii data structure design|[java](./java/170-two-sum-ii-data-structure-design.java)||
+|171|excel sheet column number||[python](./python/171-excel-sheet-column-number.py)|
 |173|binary search tree iterator|[java](./java/173-binary-search-tree-iterator.java)||
 |179|largest number|[java](./java/179-largest-number.java)||
+|187|repeated dna sequences||[python](./python/187-repeated-dna-sequences.py)|
 |188|reverse words in a string ii|[java](./java/188-best-time-to-buy-and-sell-stock-iv.java)||
 |189|rotate array|[java](./java/189-rotate-array.java)||
 |191|number of 1 bits|[java](./java/191-number-of-1-bits.java)||
@@ -173,6 +177,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |210|course schedule ii|[java](./java/210-course-schedule-ii.java)||
 |211|add and search word|[java](./java/211-add-and-search-word.java)||
 |212|word search ii|[java](./java/212-word-search-ii.java)||
+|213|house robber ii||[python](./python/213-house-robber-ii.py)|
 |215|kth largest element in an array|[java](./java/215-kth-largest-element-in-an-array.java)||
 |216|combination sum iii|[java](./java/216-combination-sum-iii.java)||
 |217|contains duplicate|[java](./java/217-contains-duplicate.java)||
@@ -183,6 +188,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |225|implement stack using queues|[java](./java/225-implement-stack-using-queues.java)||
 |226|invert binary tree|[java](./java/226-invert-binary-tree.java)||
 |227|basic calculator ii|[java](./java/227-basic-calculator-ii.java)||
+|228|summary ranges||[python](./python/228-summary-ranges.py)|
 |229|majority element ii|[java](./java/229-majority-element-ii.java)||
 |230|kth smallest element in a BST|[java](./java/230-kth-smallest-element-in-a-BST.java)||
 |231|power of two|[java](./java/231-power-of-two.java)||
@@ -201,7 +207,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |247|strobogrammatic number ii|[java](./java/247-strobogrammatic-number-ii.java)||
 |251|flatten 2d vector|[java](./java/251-flatten-2d-vector.java)||
 |252|meeting rooms|[java](./java/252-meeting-rooms.java)||
-|253|meeting rooms ii|[java](./java/253-meeting-rooms-ii.java)||
+|253|meeting rooms ii|[java](./java/253-meeting-rooms-ii.java)|[python](./python/253-meeting-rooms-ii.py)|
 |255|verify preorder sequence in binary search tree|[java](./java/255-verify-preorder-sequence-in-binary-search-tree.java)||
 |256|paint house|[java](./java/256-paint-house.java)||
 |257|binary tree paths|[java](./java/257-binary-tree-paths.java)||
@@ -222,6 +228,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |285|inorder successor in BST|[java](./java/285-inorder-successor-in-BST.java)||
 |286|walls and gates|[java](./java/286-walls-and-gates.java)||
 |287|find the duplicate number|[java](./java/287-find-the-duplicate-number.java)||
+|288|unique word abbreviation||[python](./python/288-unique-word-abbreviation.py)|
 |295|find median from data stream|[java](./java/295-find-median-from-data-stream.java)||
 |296|best meeting point|[java](./java/296-best-meeting-point.java)||
 |297|serialize and deserialize binary tree|[java](./java/297-serialize-and-deserialize-binary-tree.java)||
@@ -399,6 +406,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |844|backspace string compare|[java](./java/844-backspace-string-compare.java)||
 |852|peak index in a mountain array|[java](./java/852-peak-index-in-a-mountain-array.java)||
 |867|transpose matrix|[java](./java/867-transpose-matrix.java)||
+|872|leaf similar trees||[python](./python/872-leaf-similar-trees.py)|
 |876|middle of the linked list|[java](./java/876-middle-of-the-linked-list.java)||
 |886|possible bipartition|[java](./java/886-possible-bipartition.java)||
 |888|fair candy swap|[java](./java/888-fair-candy-swap.java)||
@@ -412,8 +420,10 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |929|unique email addresses|[java](./java/929-unique-email-addresses.java)||
 |933|number of recent calls|[java](./java/933-number-of-recent-calls.java)||
 |941|valid mountain array|[java](./java/941-valid-mountain-array.java)||
+|965|univalued binary tree||[python](./python/965-univalued-binary-tree.py)|
 |976|largest perimeter triangle||[python](./python/976-largest-perimeter-triangle.py)|
 |977|squares of a sorted array|[java](./java/977-squares-of-a-sorted-array.java)||
+|979|distribute coins in binary tree||[python](./python/979-distribute-coins-in-binary-tree.py)|
 |985|sum of even numbers after queries|[java](./java/985-sum-of-even-numbers-after-queries.java)||
 ## Readme Generator
 The script needs `python3`.
