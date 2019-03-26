@@ -300,10 +300,12 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |450|delete node in a BST|[java](./java/450-delete-node-in-a-BST.java)||
 |452|minimum number of arrows to burst balloons|[java](./java/452-minimum-number-of-arrows-to-burst-balloons.java)||
 |454|4sum ii|[java](./java/454-4sum-ii.java)||
+|459|repeated substring pattern||[python](./python/459-repeated-substring-pattern.py)|
 |461|hamming distance|[java](./java/461-hamming-distance.java)||
 |463|island perimeter|[java](./java/463-island-perimeter.java)||
 |467|unique substrings in wraparound string|[java](./java/467-unique-substrings-in-wraparound-string.java)||
 |475|heaters|[java](./java/475-heaters.java)||
+|476|number complement||[python](./python/476-number-complement.py)|
 |482|license key formatting|[java](./java/482-license-key-formatting.java)||
 |485|max consecutive ones|[java](./java/485-max-consecutive-ones.java)||
 |487|max consecutive ones ii|[java](./java/487-max-consecutive-ones-ii.java)||
@@ -369,6 +371,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |701|insert into a binary search tree|[java](./java/701-insert-into-a-binary-search-tree.java)||
 |702|search in a sorted array of unknown size|[java](./java/702-search-in-a-sorted-array-of-unknown-size.java)||
 |703|kth largest element in a stream|[java](./java/703-kth-largest-element-in-a-stream.java)||
+|704|binary search||[python](./python/704-binary-search.py)|
 |706|design hashmap|[java](./java/706-design-hashmap.java)||
 |707|design linked list|[java](./java/707-design-linked-list.java)||
 |708|insert into a cyclic sorted list|[java](./java/708-insert-into-a-cyclic-sorted-list.java)||
@@ -380,6 +383,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |724|find pivot index|[java](./java/724-find-pivot-index.java)||
 |725|split linked list in parts|[java](./java/725-split-linked-list-in-parts.java)||
 |733|flood fill|[java](./java/733-flood-fill.java)||
+|734|sentence similarity||[python](./python/734-sentence-similarity.py)|
 |744|find smallest letter greater than target|[java](./java/744-find-smallest-letter-greater-than-target.java)||
 |746|min cost climbing stairs|[java](./java/746-min-cost-climbing-stairs.java)||
 |747|largest number at least twice of others|[java](./java/747-largest-number-at-least-twice-of-others.java)||
@@ -393,8 +397,10 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |783|minimum distance between BST nodes|[java](./java/783-minimum-distance-between-BST-nodes.java)||
 |784|letter case permutation|[java](./java/784-letter-case-permutation.java)||
 |785|is graph bipartite|[java](./java/785-is-graph-bipartite.java)||
+|788|rotated digits||[python](./python/788-rotated-digits.py)|
 |791|custom sort string|[java](./java/791-custom-sort-string.java)||
 |804|unique morse code words|[java](./java/804-unique-morse-code-words.java)||
+|807|max increase to keep city skyline||[python](./python/807-max-increase-to-keep-city-skyline.py)|
 |811|subdomain visit count||[python](./python/811-subdomain-visit-count.py)|
 |814|binary tree pruning|[java](./java/814-binary-tree-pruning.java)||
 |819|most common word|[java](./java/819-most-common-word.java)||
@@ -402,6 +408,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |825|friends of appropriate ages|[java](./java/825-friends-of-appropriate-ages.java)||
 |830|positions of large groups|[java](./java/830-positions-of-large-groups.java)||
 |832|flipping an image|[java](./java/832-flipping-an-image.java)||
+|836|rectangle overlap||[python](./python/836-rectangle-overlap.py)|
 |840|magic squares in grid||[python](./python/840-magic-squares-in-grid.py)|
 |844|backspace string compare|[java](./java/844-backspace-string-compare.java)||
 |852|peak index in a mountain array|[java](./java/852-peak-index-in-a-mountain-array.java)||
@@ -416,15 +423,19 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |898|bitwise ors of subarrays|[java](./java/898-bitwise-ors-of-subarrays.java)||
 |904|fruit into baskets|[java](./java/904-fruit-into-baskets.java)||
 |905|sort array by parity|[java](./java/905-sort-array-by-parity.java)||
+|914|x of a kind in a deck of cards||[python](./python/914-x-of-a-kind-in-a-deck-of-cards.py)|
 |922|sort array by parity ii|[java](./java/922-sort-array-by-parity-ii.java)||
 |929|unique email addresses|[java](./java/929-unique-email-addresses.java)||
 |933|number of recent calls|[java](./java/933-number-of-recent-calls.java)||
+|938|range sum of BST||[python](./python/938-range-sum-of-BST.py)|
 |941|valid mountain array|[java](./java/941-valid-mountain-array.java)||
+|947|most stones removed with same row or column||[python](./python/947-most-stones-removed-with-same-row-or-column.py)|
 |965|univalued binary tree||[python](./python/965-univalued-binary-tree.py)|
 |976|largest perimeter triangle||[python](./python/976-largest-perimeter-triangle.py)|
 |977|squares of a sorted array|[java](./java/977-squares-of-a-sorted-array.java)||
 |979|distribute coins in binary tree||[python](./python/979-distribute-coins-in-binary-tree.py)|
 |985|sum of even numbers after queries|[java](./java/985-sum-of-even-numbers-after-queries.java)||
+|994|rotting oranges||[python](./python/994-rotting-oranges.py)|
 ## Readme Generator
 The script needs `python3`.
 ```shell
