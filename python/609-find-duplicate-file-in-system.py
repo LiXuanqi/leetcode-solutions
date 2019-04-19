@@ -11,10 +11,7 @@ class Solution:
                 leftParenthese = file.index("(")
                 filename = file[:leftParenthese]
                 content = file[leftParenthese + 1 : -1]
-                if content not in contentToPaths:
-                    contentToPaths[content] = []
-                contentToPaths[content].append(folderPath + "/" + filename)
-        
+                contentToPaths.setdefault(content, []).append(folderPath + "/" + filename)   
         contentToPaths = {}
         for path in paths:
             decodePath(path, contentToPaths)
