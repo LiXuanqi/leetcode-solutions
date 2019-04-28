@@ -52,7 +52,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |42|trapping rain water|[java](./java/42-trapping-rain-water.java)||
 |43|multiply strings|[java](./java/43-multiply-strings.java)||
 |44|wildcard matching|[java](./java/44-wildcard-matching.java)||
-|45|jump game ii|[java](./java/45-jump-game-ii.java)||
+|45|jump game ii|[java](./java/45-jump-game-ii.java)|[python](./python/45-jump-game-ii.py)|
 |46|permutaions|[java](./java/46-permutaions.java)||
 |47|permutations 2|[java](./java/47-permutations-2.java)||
 |48|rotate image|[java](./java/48-rotate-image.java)||
@@ -62,7 +62,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |52|n queens ii|[java](./java/52-n-queens-ii.java)||
 |53|maximum subarray|[java](./java/53-maximum-subarray.java)||
 |54|spiral matrix|[java](./java/54-spiral-matrix.java)||
-|55|jump game|[java](./java/55-jump-game.java)||
+|55|jump game|[java](./java/55-jump-game.java)|[python](./python/55-jump-game.py)|
 |56|merge intervals|[java](./java/56-merge-intervals.java)|[python](./python/56-merge-intervals.py)|
 |57|insert interval|[java](./java/57-insert-interval.java)||
 |58|length of last word|[java](./java/58-length-of-last-word.java)||
@@ -203,6 +203,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |241|different ways to add parentheses|[java](./java/241-different-ways-to-add-parentheses.java)||
 |242|valid anagram|[java](./java/242-valid-anagram.java)||
 |243|shortest word distance|[java](./java/243-shortest-word-distance.java)||
+|245|shortest word distance iii||[python](./python/245-shortest-word-distance-iii.py)|
 |246|strobogrammatic number|[java](./java/246-strobogrammatic-number.java)||
 |247|strobogrammatic number ii|[java](./java/247-strobogrammatic-number-ii.java)||
 |251|flatten 2d vector|[java](./java/251-flatten-2d-vector.java)||
@@ -212,6 +213,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |256|paint house|[java](./java/256-paint-house.java)||
 |257|binary tree paths|[java](./java/257-binary-tree-paths.java)||
 |258|add digits||[python](./python/258-add-digits.py)|
+|259|3 sum smaller||[python](./python/259-3-sum-smaller.py)|
 |261|graph valid tree|[java](./java/261-graph-valid-tree.java)||
 |266|palindrome permutation|[java](./java/266-palindrome-permutation.java)||
 |268|missing number|[java](./java/268-missing-number.java)||
@@ -229,6 +231,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |286|walls and gates|[java](./java/286-walls-and-gates.java)||
 |287|find the duplicate number|[java](./java/287-find-the-duplicate-number.java)||
 |288|unique word abbreviation||[python](./python/288-unique-word-abbreviation.py)|
+|289|game of life||[python](./python/289-game-of-life.py)|
 |295|find median from data stream|[java](./java/295-find-median-from-data-stream.java)||
 |296|best meeting point|[java](./java/296-best-meeting-point.java)||
 |297|serialize and deserialize binary tree|[java](./java/297-serialize-and-deserialize-binary-tree.java)||
@@ -265,6 +268,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |362|design hit counter|[java](./java/362-design-hit-counter.java)||
 |366|find leaves of binary tree|[java](./java/366-find-leaves-of-binary-tree.java)||
 |367|valid perfect square|[java](./java/367-valid-perfect-square.java)||
+|370|range addition||[python](./python/370-range-addition.py)|
 |374|guess number higher or lower|[java](./java/374-guess-number-higher-or-lower.java)|[python](./python/374-guess-number-higher-or-lower.py)|
 |377|combination sum iv|[java](./java/377-combination-sum-iv.java)||
 |378|kth smallest element in a sorted matrix|[java](./java/378-kth-smallest-element-in-a-sorted-matrix.java)||
@@ -284,6 +288,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |412|fizz buzz|[java](./java/412-fizz-buzz.java)||
 |414|third maximum number||[python](./python/414-third-maximum-number.py)|
 |415|add strings|[java](./java/415-add-strings.java)||
+|417|pacific atlantic water flow||[python](./python/417-pacific-atlantic-water-flow.py)|
 |418|sentence screen fitting|[java](./java/418-sentence-screen-fitting.java)||
 |426|convert binary search tree to sorted doubly linked list|[java](./java/426-convert-binary-search-tree-to-sorted-doubly-linked-list.java)||
 |427|construct quad tree|[java](./java/427-construct-quad-tree.java)||
@@ -315,6 +320,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |492|construct the rectangle||[python](./python/492-construct-the-rectangle.py)|
 |493|reverse pairs|[java](./java/493-reverse-pairs.java)||
 |494|target sum|[java](./java/494-target-sum.java)||
+|495|teemo attacking||[python](./python/495-teemo-attacking.py)|
 |496|next greater element i|[java](./java/496-next-greater-element-i.java)||
 |498|diagonal traverse|[java](./java/498-diagonal-traverse.java)||
 |503|next greater element ii|[java](./java/503-next-greater-element-ii.java)||
@@ -325,6 +331,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |523|continuous subarray sum|[java](./java/523-continuous-subarray-sum.java)||
 |528|random pick with weight|[java](./java/528-random-pick-with-weight.java)||
 |530|minimum absolute difference in BST||[python](./python/530-minimum-absolute-difference-in-BST.py)|
+|531|lonely pixel i||[python](./python/531-lonely-pixel-i.py)|
 |538|convert bst to greater tree|[java](./java/538-convert-bst-to-greater-tree.java)||
 |543|diameter of binary tree|[java](./java/543-diameter-of-binary-tree.java)||
 |556|next greater element iii|[java](./java/556-next-greater-element-iii.java)||
@@ -344,6 +351,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |598|range addition ii||[python](./python/598-range-addition-ii.py)|
 |599|minimum index sum of two lists|[java](./java/599-minimum-index-sum-of-two-lists.java)||
 |606|construct string from binary tree|[java](./java/606-construct-string-from-binary-tree.java)||
+|609|find duplicate file in system||[python](./python/609-find-duplicate-file-in-system.py)|
 |617|merge two binary trees|[java](./java/617-merge-two-binary-trees.java)||
 |621|task scheduler|[java](./java/621-task-scheduler.java)||
 |622|design circular queue|[java](./java/622-design-circular-queue.java)||
@@ -436,6 +444,9 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |979|distribute coins in binary tree||[python](./python/979-distribute-coins-in-binary-tree.py)|
 |985|sum of even numbers after queries|[java](./java/985-sum-of-even-numbers-after-queries.java)||
 |994|rotting oranges||[python](./python/994-rotting-oranges.py)|
+|1029|two city scheduling|[java](./java/1029-two-city-scheduling.java)||
+|1030|matrix cells in distance order|[java](./java/1030-matrix-cells-in-distance-order.java)||
+|1031|maximum sum of two non overlapping subarrays|[java](./java/1031-maximum-sum-of-two-non-overlapping-subarrays.java)||
 ## Readme Generator
 The script needs `python3`.
 ```shell
