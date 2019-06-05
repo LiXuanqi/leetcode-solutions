@@ -14,10 +14,11 @@ class Solution:
         def dfs(s, start, temp, level):
             if level > 4:
                 return
-            if start >= len(s):
-                if level == 4:
-                    ans.append(temp[1:])
+        
+            if level == 4 and start == len(s):
+                ans.append(temp[1:])
                 return
+            
             for length in range(3):
                 end = start + 1 + length
                 if end <= len(s):
