@@ -2,11 +2,15 @@ class Solution:
     def removeDuplicates(self, S: str) -> str:
         if not S:
             return ""
-        stack = []
-        for c in S:
-            if not stack or stack[-1] != c:
-                stack.append(c)
+        S = list(S)
+        slow = 0
+        fast = 0
+        while fast < len(S):
+            character = S[fast]
+            if slow > 0 and S[slow - 1] == character:
+                slow -= 1
             else:
-                stack.pop()
-        return "".join(stack)
-        
+                S[slow] = character
+                slow += 1
+            fast += 1
+        return "".join(S[:slow])
