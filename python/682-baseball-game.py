@@ -2,14 +2,20 @@ class Solution:
     def calPoints(self, ops: List[str]) -> int:
         if not ops:
             return 0
-        valids = []
-        for op in ops:
-            if op == "C" and valids:
-                valids.pop() 
-            elif op == "D":
-                valids.append(valids[-1] * 2)
-            elif op == "+" and len(valids) >= 2:
-                valids.append(valids[-2] + valids[-1]) 
+        slow = 0
+        fast = 0
+        while fast < len(ops):
+            op = ops[fast]
+            if slow > 1 and op == "+":
+                ops[slow] = ops[slow - 1] + ops[slow - 2]
+                slow += 1
+            elif slow > 0 and op == "D":
+                ops[slow] = 2 * ops[slow - 1]
+                slow += 1
+            elif op == "C":
+                slow -= 1
             else:
-                valids.append(int(op))
-        return sum(valids)
+                ops[slow] = int(op)
+                slow += 1
+            fast += 1
+        return sum(ops[:slow])
