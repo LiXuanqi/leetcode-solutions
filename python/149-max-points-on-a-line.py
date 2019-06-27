@@ -15,7 +15,7 @@ class Solution:
                     x = x1
                     xs[x] = xs.get(x, 0) + 1
                 else:
-                    slope = (y2 - y1) / (x2 - x1)
+                    slope = (y2 - y1) * 10 / (x2 - x1)
                     slopes[slope] = slopes.get(slope, 0) + 1
             for value in slopes.values():
                 ans = max(ans, value + duplicate)
@@ -23,4 +23,3 @@ class Solution:
                 ans = max(ans, value + duplicate)
             ans = max(ans, duplicate)
         return ans
-        
