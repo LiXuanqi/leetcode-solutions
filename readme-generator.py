@@ -2,7 +2,7 @@
 import os
 import logging
 import collections
-
+import json
 # - config logger
 loggerFormat = '%(asctime)-15s %(message)s'
 logging.basicConfig(format=loggerFormat)
@@ -10,15 +10,15 @@ logger = logging.getLogger('readme-generator')
 logger.setLevel(logging.INFO)
 
 # - Config
-choosedLanguages = ['python', 'java']
+choosedLanguages = ['python3', 'java']
 TEMPLATE_TABLE_TAG = "{%-- TABLE --%}"
 LANGUAGES = {
-  'python': 'py',
+  'python3': 'py',
   'java': 'java'
 }
 
 def formatFilename(filename, language):
-  words = filename.split('-')
+  words = filename.split('.')
   index = int(words[0])
   title = ' '.join(words[1:])[:-len('.' + LANGUAGES[language])]
   url = './%s/' % (language) + filename
@@ -47,7 +47,7 @@ class Question:
 
   def toMarkdown(self):
     javaUrl = "[java](%s)" % (self.solutions['java']) if 'java' in self.solutions else ""
-    pythonUrl = "[python](%s)" % (self.solutions['python']) if 'python' in self.solutions else ""
+    pythonUrl = "[python3](%s)" % (self.solutions['python3']) if 'python3' in self.solutions else ""
     markdown = "|%s|%s|%s|%s|" % (self.index, self.title, javaUrl, pythonUrl)
     return markdown
 
@@ -57,7 +57,8 @@ if __name__ == "__main__":
   # - get all file names
   questions = {}
   for language in choosedLanguages:
-    for filename in os.listdir("%s/%s" % (os.path.abspath(os.path.dirname(__file__)), language)):
+    folderName = "%s/%s" % (os.path.abspath(os.path.dirname(__file__)), language)
+    for filename in os.listdir(folderName):
       index, title, url = formatFilename(filename, language)
       if index not in questions:
         questions[index] = Question(index, title)
