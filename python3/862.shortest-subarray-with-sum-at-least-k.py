@@ -11,14 +11,15 @@ class Solution:
             curr_sum += num
             prefixSum.append(curr_sum)        
 
-        def getIntervalSum(start, end): 
-            return prefixSum[end + 1] - prefixSum[start]
         ans = float('inf') 
-        for start in range(len(A)):
-            for end in range(start, len(A)):
-                intervalSum = getIntervalSum(start ,end)
-                if intervalSum >= K:
-                    ans = min(end - start + 1, ans)
-        
+        deque = collections.deque()        
+        deque.append(0)
+        for end in range(1, len(A) + 1):
+            while deque and prefixSum[end] - prefixSum[deque[0]] >= K:
+                ans = min(ans, end - deque.popleft())
+            while deque and prefixSum[end] <= prefixSum[deque[-1]]:
+                deque.pop()
+            deque.append(end)
+
         return ans if ans != float('inf') else -1
 
