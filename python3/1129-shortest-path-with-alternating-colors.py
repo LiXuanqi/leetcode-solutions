@@ -1,46 +1,30 @@
 class Solution:
     def shortestAlternatingPaths(self, n: int, red_edges: List[List[int]], blue_edges: List[List[int]]) -> List[int]:
-        redMap = {}
-        blueMap = {}
-        
-        def buildMap(edges, s_map):
-            for start, end in edges:
-                s_map.setdefault(start, []).append(end)
+        graph = [[[], []] for i in range(n)]
+        for start, end in red_edges:
+            graph[start][0].append(end)
+        for start, end in blue_edges:
+            graph[start][1].append(end)
+        ans = [[2 * n, 2 * n] for i in range(n)]
+        ans[0] = [0, 0]
+        queue = collections.deque()
+        queue.append((0, 1))
+        queue.append((0, 0))
+        while queue:
+            curr_node, curr_color = queue.popleft()
+            next_color = curr_color ^ 1
+            for next_node in graph[curr_node][curr_color]:
+                if ans[next_node][next_color] == 2 * n:
+                    ans[next_node][next_color] = ans[curr_node][curr_color] + 1
+                    queue.append((next_node, next_color))
+        res = []
+        for row in ans:
+            row_min = min(row)
+            res.append(-1 if row_min == 2 * n else row_min)
             
-        buildMap(red_edges, redMap)
-        buildMap(blue_edges, blueMap)
-        ans = [-1] * n
-        # start from red
-        def bfs(currColor):
-            queue = collections.deque()
-            queue.append(0)
-            step = 0
-            while queue:
-                size = len(queue)
-                for i in range(size):
-                    curr = queue.popleft()
-                    ans[curr] = step if ans[curr] == -1 else min(ans[curr], step)
-                    currMap = redMap if currColor == 1 else blueMap
-                    neighbors = currMap.get(curr, []).copy()
-                    toDelete = []
-                    for nextNode in neighbors:
-                        queue.append(nextNode)
-                        toDelete.append(nextNode)
-       
-                    for delete in toDelete:
-                        currMap[curr].remove(delete)
-                currColor *= -1
-                step += 1
-        redMapCopy = copy.deepcopy(redMap)
-        blueMapCopy = copy.deepcopy(blueMap)
-        bfs(1)
-        
-        redMap = redMapCopy
-        blueMap = blueMapCopy
-
-        bfs(-1)
-        
-        return ans
+        return res
+                
+            
                 
                          
                 
