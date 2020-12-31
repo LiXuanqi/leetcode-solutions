@@ -1,4 +1,6 @@
 {
-  "python.linting.pylintEnabled": true,
-  "python.pythonPath": "/Users/lixuanqi/.local/share/virtualenvs/leetcode-solutions-D9Mkw-1q/bin/python"
+  "python.linting.pylintEnabled": false,
+  "python.pythonPath": "/usr/bin/python3",
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true
 }
