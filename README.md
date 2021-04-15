@@ -255,6 +255,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |303|range-sum-query-immutable|[java](./java/303.range-sum-query-immutable.java)||
 |304|range-sum-query-2d-immutable|[java](./java/304.range-sum-query-2d-immutable.java)||
 |305|number-of-islands-ii|[java](./java/305.number-of-islands-ii.java)||
+|306|additive-number||[python3](./python3/306.additive-number.py)|
 |307|range-sum-query-mutable|[java](./java/307.range-sum-query-mutable.java)||
 |309|best-time-to-buy-and-sell-stock-with-cooldown|[java](./java/309.best-time-to-buy-and-sell-stock-with-cooldown.java)||
 |310|minimum-height-trees||[python3](./python3/310.minimum-height-trees.py)|
@@ -472,6 +473,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |843|guess-the-word||[python3](./python3/843.guess-the-word.py)|
 |844|backspace-string-compare|[java](./java/844.backspace-string-compare.java)||
 |852|peak-index-in-a-mountain-array|[java](./java/852.peak-index-in-a-mountain-array.java)||
+|855|exam-room||[python3](./python3/855.exam-room.py)|
 |858|mirror-reflection||[python3](./python3/858.mirror-reflection.py)|
 |862|shortest-subarray-with-sum-at-least-k||[python3](./python3/862.shortest-subarray-with-sum-at-least-k.py)|
 |863|all-nodes-distance-k-in-binary-tree||[python3](./python3/863.all-nodes-distance-k-in-binary-tree.py)|
@@ -535,7 +537,9 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1138|alphabet-board-path||[python3](./python3/1138.alphabet-board-path.py)|
 |1144|decrease-elements-to-make-array-zigzag||[python3](./python3/1144.decrease-elements-to-make-array-zigzag.py)|
 |1252|cells-with-odd-values-in-a-matrix||[python3](./python3/1252.cells-with-odd-values-in-a-matrix.py)|
+|1254|number-of-clesed-islands||[python3](./python3/1254.number-of-clesed-islands.py)|
 |1256|encode-number||[python3](./python3/1256.encode-number.py)|
+|1277|count-square-submatrices-with-all-ones||[python3](./python3/1277.count-square-submatrices-with-all-ones.py)|
 |1313|decompress-run-length-encoded-list||[python3](./python3/1313.decompress-run-length-encoded-list.py)|
 |1387|sort-integers-by-the-power-value||[python3](./python3/1387.sort-integers-by-the-power-value.py)|
 |1450|number-of-students-doing-homework-at-a-given-time||[python3](./python3/1450.number-of-students-doing-homework-at-a-given-time.py)|
