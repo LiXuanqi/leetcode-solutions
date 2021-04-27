@@ -3,7 +3,7 @@
 
 This repository records my solutions on LeetCode, written in **Java and Python**.
 
-❤️ Notes and summaries are in my [blog](https://lixuanqi.netlify.app/).
+❤️ Notes and summaries are in my [blog](http://lixuanqi.me).
 
 🖥 This `README.md` is generated automatically. 
 
@@ -133,6 +133,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |130|surrounded-regions|[java](./java/130.surrounded-regions.java)||
 |131|palindrome-partitioning|[java](./java/131.palindrome-partitioning.java)||
 |133|clone-graph|[java](./java/133.clone-graph.java)||
+|134|gas-station||[python3](./python3/134.gas-station.py)|
 |136|single-number|[java](./java/136.single-number.java)||
 |138|copy-list-with-random-pointer|[java](./java/138.copy-list-with-random-pointer.java)||
 |139|word-break|[java](./java/139.word-break.java)|[python3](./python3/139.word-break.py)|
@@ -261,11 +262,13 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |311|sparse-matrix-multiplication|[java](./java/311.sparse-matrix-multiplication.java)||
 |314|binary-tree-vertical-order-traversal|[java](./java/314.binary-tree-vertical-order-traversal.java)||
 |315|count-of-smaller-numbers-after-self|[java](./java/315.count-of-smaller-numbers-after-self.java)||
+|316|remove-duplicate-letters||[python3](./python3/316.remove-duplicate-letters.py)|
 |317|shortest-distance-from-all-buildings|[java](./java/317.shortest-distance-from-all-buildings.java)||
 |320|generalized-abbreviation||[python3](./python3/320.generalized-abbreviation.py)|
 |322|coin-change|[java](./java/322.coin-change.java)||
 |323|number-of-connected-components-in-an-undirected-graph|[java](./java/323.number-of-connected-components-in-an-undirected-graph.java)||
 |325|maximum-size-subarray-sum-equals-k|[java](./java/325.maximum-size-subarray-sum-equals-k.java)||
+|326|power-of-three||[python3](./python3/326.power-of-three.py)|
 |328|odd-even-linked-list|[java](./java/328.odd-even-linked-list.java)||
 |329|longest-increasing-path-in-a-matrix|[java](./java/329.longest-increasing-path-in-a-matrix.java)||
 |332|reconstruct-itinerary|[java](./java/332.reconstruct-itinerary.java)||
@@ -283,6 +286,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |350|intersection-of-two-arrays-ii|[java](./java/350.intersection-of-two-arrays-ii.java)||
 |356|line-reflection||[python3](./python3/356.line-reflection.py)|
 |359|logger-rate-limiter|[java](./java/359.logger-rate-limiter.java)|[python3](./python3/359.logger-rate-limiter.py)|
+|361|boom-enemy||[python3](./python3/361.boom-enemy.py)|
 |362|design-hit-counter|[java](./java/362.design-hit-counter.java)||
 |366|find-leaves-of-binary-tree|[java](./java/366.find-leaves-of-binary-tree.java)||
 |367|valid-perfect-square|[java](./java/367.valid-perfect-square.java)||
@@ -298,6 +302,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |389|find-the-difference|[java](./java/389.find-the-difference.java)||
 |392|is-subsequence|[java](./java/392.is-subsequence.java)||
 |394|decode-string|[java](./java/394.decode-string.java)||
+|397|integer-replacement||[python3](./python3/397.integer-replacement.py)|
 |398|random-pick-index|[java](./java/398.random-pick-index.java)||
 |399|evaluate-division|[java](./java/399.evaluate-division.java)||
 |403|frog-jump|[java](./java/403.frog-jump.java)||
@@ -310,6 +315,8 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |416|partition-equal-subset-sum||[python3](./python3/416.partition-equal-subset-sum.py)|
 |417|pacific-atlantic-water-flow||[python3](./python3/417.pacific-atlantic-water-flow.py)|
 |418|sentence-screen-fitting|[java](./java/418.sentence-screen-fitting.java)||
+|419|battleships-in-a-board||[python3](./python3/419.battleships-in-a-board.py)|
+|424|longest-repeating-character-replacement||[python3](./python3/424.longest-repeating-character-replacement.py)|
 |426|convert-binary-search-tree-to-sorted-doubly-linked-list|[java](./java/426.convert-binary-search-tree-to-sorted-doubly-linked-list.java)||
 |427|construct-quad-tree|[java](./java/427.construct-quad-tree.java)||
 |429|n-ary-tree-level-order-traversal|[java](./java/429.n-ary-tree-level-order-traversal.java)||
@@ -342,11 +349,11 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |493|reverse-pairs|[java](./java/493.reverse-pairs.java)||
 |494|target-sum|[java](./java/494.target-sum.java)||
 |495|teemo-attacking||[python3](./python3/495.teemo-attacking.py)|
-|496|next-greater-element-i|[java](./java/496.next-greater-element-i.java)||
+|496|next-greater-element-i|[java](./java/496.next-greater-element-i.java)|[python3](./python3/496.next-greater-element-i.py)|
 |498|diagonal-traverse|[java](./java/498.diagonal-traverse.java)||
 |500|keyboard-row||[python3](./python3/500.keyboard-row.py)|
 |501|find-mode-in-binary-search-tree||[python3](./python3/501.find-mode-in-binary-search-tree.py)|
-|503|next-greater-element-ii|[java](./java/503.next-greater-element-ii.java)||
+|503|next-greater-element-ii|[java](./java/503.next-greater-element-ii.java)|[python3](./python3/503.next-greater-element-ii.py)|
 |505|the-maze-ii|[java](./java/505.the-maze-ii.java)||
 |508|most-frequent-subtree-sum||[python3](./python3/508.most-frequent-subtree-sum.py)|
 |509|fibonacci-number|[java](./java/509.fibonacci-number.java)||
@@ -355,6 +362,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |518|coin-change-2|[java](./java/518.coin-change-2.java)||
 |523|continuous-subarray-sum|[java](./java/523.continuous-subarray-sum.java)||
 |528|random-pick-with-weight|[java](./java/528.random-pick-with-weight.java)||
+|529|minesweeper||[python3](./python3/529.minesweeper.py)|
 |530|minimum-absolute-difference-in-bst||[python3](./python3/530.minimum-absolute-difference-in-bst.py)|
 |531|lonely-pixel-i||[python3](./python3/531.lonely-pixel-i.py)|
 |536|construct-binary-tree-from-string||[python3](./python3/536.construct-binary-tree-from-string.py)|
@@ -362,6 +370,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |543|diameter-of-binary-tree|[java](./java/543.diameter-of-binary-tree.java)||
 |544|output-contest-matches||[python3](./python3/544.output-contest-matches.py)|
 |545|boundary-of-binary-tree||[python3](./python3/545.boundary-of-binary-tree.py)|
+|547|number-of-provinces||[python3](./python3/547.number-of-provinces.py)|
 |549|binary-tree-longest-consecutive-sequence-ii||[python3](./python3/549.binary-tree-longest-consecutive-sequence-ii.py)|
 |551|student-attendance-record-i||[python3](./python3/551.student-attendance-record-i.py)|
 |556|next-greater-element-iii|[java](./java/556.next-greater-element-iii.java)||
@@ -369,6 +378,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |559|maximum-depth-of-n-ary-tree|[java](./java/559.maximum-depth-of-n-ary-tree.java)||
 |560|subarray-sum-equals-k|[java](./java/560.subarray-sum-equals-k.java)||
 |561|array-partition-i|[java](./java/561.array-partition-i.java)||
+|562|longest-line-of-consecutive-one-in-matrix||[python3](./python3/562.longest-line-of-consecutive-one-in-matrix.py)|
 |563|binary-tree-tilt|[java](./java/563.binary-tree-tilt.java)||
 |564|find-the-closest-palindrome|[java](./java/564.find-the-closest-palindrome.java)||
 |566|reshape-the-matrix|[java](./java/566.reshape-the-matrix.java)||
@@ -433,6 +443,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |733|flood-fill|[java](./java/733.flood-fill.java)||
 |734|sentence-similarity||[python3](./python3/734.sentence-similarity.py)|
 |737|sentense-similarity-ii||[python3](./python3/737.sentense-similarity-ii.py)|
+|739|daily-temperatures||[python3](./python3/739.daily-temperatures.py)|
 |742|closest-leaf-in-binary-tree||[python3](./python3/742.closest-leaf-in-binary-tree.py)|
 |744|find-smallest-letter-greater-than-target|[java](./java/744.find-smallest-letter-greater-than-target.java)||
 |746|min-cost-climbing-stairs|[java](./java/746.min-cost-climbing-stairs.java)||
@@ -453,9 +464,11 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |787|cheapest-flights-within-k-stops|[java](./java/787.cheapest-flights-within-k-stops.java)||
 |788|rotated-digits||[python3](./python3/788.rotated-digits.py)|
 |791|custom-sort-string|[java](./java/791.custom-sort-string.java)||
+|792|number-of-matching-subsequences||[python3](./python3/792.number-of-matching-subsequences.py)|
 |804|unique-morse-code-words|[java](./java/804.unique-morse-code-words.java)||
 |806|number-of-lines-to-write-string||[python3](./python3/806.number-of-lines-to-write-string.py)|
 |807|max-increase-to-keep-city-skyline||[python3](./python3/807.max-increase-to-keep-city-skyline.py)|
+|809|expressive-words||[python3](./python3/809.expressive-words.py)|
 |811|subdomain-visit-count||[python3](./python3/811.subdomain-visit-count.py)|
 |812|largest-triangle-area||[python3](./python3/812.largest-triangle-area.py)|
 |814|binary-tree-pruning|[java](./java/814.binary-tree-pruning.java)||
@@ -472,6 +485,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |843|guess-the-word||[python3](./python3/843.guess-the-word.py)|
 |844|backspace-string-compare|[java](./java/844.backspace-string-compare.java)||
 |852|peak-index-in-a-mountain-array|[java](./java/852.peak-index-in-a-mountain-array.java)||
+|853|car-fleet||[python3](./python3/853.car-fleet.py)|
 |858|mirror-reflection||[python3](./python3/858.mirror-reflection.py)|
 |862|shortest-subarray-with-sum-at-least-k||[python3](./python3/862.shortest-subarray-with-sum-at-least-k.py)|
 |863|all-nodes-distance-k-in-binary-tree||[python3](./python3/863.all-nodes-distance-k-in-binary-tree.py)|
@@ -498,17 +512,21 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |925|long-pressed-name||[python3](./python3/925.long-pressed-name.py)|
 |929|unique-email-addresses|[java](./java/929.unique-email-addresses.java)||
 |933|number-of-recent-calls|[java](./java/933.number-of-recent-calls.java)||
+|934|shortest-bridge||[python3](./python3/934.shortest-bridge.py)|
 |938|range-sum-of-bst||[python3](./python3/938.range-sum-of-bst.py)|
 |941|valid-mountain-array|[java](./java/941.valid-mountain-array.java)||
 |942|di-string-match||[python3](./python3/942.di-string-match.py)|
+|946|validate-stack-sequences||[python3](./python3/946.validate-stack-sequences.py)|
 |947|most-stones-removed-with-same-row-or-column||[python3](./python3/947.most-stones-removed-with-same-row-or-column.py)|
 |951|flip-equavalent-binary-trees||[python3](./python3/951.flip-equavalent-binary-trees.py)|
 |958|check-completeness-of-a-binary-tree||[python3](./python3/958.check-completeness-of-a-binary-tree.py)|
 |965|univalued-binary-tree||[python3](./python3/965.univalued-binary-tree.py)|
+|973|k-closest-points-to-origin||[python3](./python3/973.k-closest-points-to-origin.py)|
 |976|largest-perimeter-triangle||[python3](./python3/976.largest-perimeter-triangle.py)|
 |977|squares-of-a-sorted-array|[java](./java/977.squares-of-a-sorted-array.java)||
 |979|distribute-coins-in-binary-tree||[python3](./python3/979.distribute-coins-in-binary-tree.py)|
 |980|unique-paths-iii||[python3](./python3/980.unique-paths-iii.py)|
+|981|time-based-key-value-store||[python3](./python3/981.time-based-key-value-store.py)|
 |985|sum-of-even-numbers-after-queries|[java](./java/985.sum-of-even-numbers-after-queries.java)||
 |987|vertical-order-traversal-of-a-binary-tree||[python3](./python3/987.vertical-order-traversal-of-a-binary-tree.py)|
 |993|cousins-in-binary-tree||[python3](./python3/993.cousins-in-binary-tree.py)|
@@ -527,6 +545,8 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1047|remove-all-adjacent-duplicates-in-string||[python3](./python3/1047.remove-all-adjacent-duplicates-in-string.py)|
 |1054|distant-barcodes||[python3](./python3/1054.distant-barcodes.py)|
 |1064|fixed-point||[python3](./python3/1064.fixed-point.py)|
+|1089|duplicate-zeros||[python3](./python3/1089.duplicate-zeros.py)|
+|1091|shortest-path-in-binary-matrix||[python3](./python3/1091.shortest-path-in-binary-matrix.py)|
 |1108|defanging-an-ip-address||[python3](./python3/1108.defanging-an-ip-address.py)|
 |1122|relative-sort-array||[python3](./python3/1122.relative-sort-array.py)|
 |1123|lowest-common-ancestor-of-deepest-leaves||[python3](./python3/1123.lowest-common-ancestor-of-deepest-leaves.py)|
@@ -534,20 +554,35 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1129|shortest-path-with-alternating-colors||[python3](./python3/1129.shortest-path-with-alternating-colors.py)|
 |1138|alphabet-board-path||[python3](./python3/1138.alphabet-board-path.py)|
 |1144|decrease-elements-to-make-array-zigzag||[python3](./python3/1144.decrease-elements-to-make-array-zigzag.py)|
+|1146|snapshot-array||[python3](./python3/1146.snapshot-array.py)|
+|1197|minimum-knight-moves||[python3](./python3/1197.minimum-knight-moves.py)|
 |1252|cells-with-odd-values-in-a-matrix||[python3](./python3/1252.cells-with-odd-values-in-a-matrix.py)|
 |1256|encode-number||[python3](./python3/1256.encode-number.py)|
 |1313|decompress-run-length-encoded-list||[python3](./python3/1313.decompress-run-length-encoded-list.py)|
+|1352|product-of-the-last-k-numbers||[python3](./python3/1352.product-of-the-last-k-numbers.py)|
 |1387|sort-integers-by-the-power-value||[python3](./python3/1387.sort-integers-by-the-power-value.py)|
+|1423|maximum-points-you-can-obtain-from-cards||[python3](./python3/1423.maximum-points-you-can-obtain-from-cards.py)|
+|1438|longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit||[python3](./python3/1438.longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit.py)|
 |1450|number-of-students-doing-homework-at-a-given-time||[python3](./python3/1450.number-of-students-doing-homework-at-a-given-time.py)|
 |1451|rearrange-words-in-sentence||[python3](./python3/1451.rearrange-words-in-sentence.py)|
+|1477|find-two-non-overlapping-sub-arrays-each-with-target-sun||[python3](./python3/1477.find-two-non-overlapping-sub-arrays-each-with-target-sun.py)|
 |1525|number-of-good-ways-to-split-a-string||[python3](./python3/1525.number-of-good-ways-to-split-a-string.py)|
+|1576|replace-all-?s-to-avoid-consecutive-repeating-characters||[python3](./python3/1576.replace-all-?s-to-avoid-consecutive-repeating-characters.py)|
 |1584|min-cost-to-connect-all-points||[python3](./python3/1584.min-cost-to-connect-all-points.py)|
 |1616|split-two-strings-to-make-palindrome||[python3](./python3/1616.split-two-strings-to-make-palindrome.py)|
+|1631|path-with-minimum-effort||[python3](./python3/1631.path-with-minimum-effort.py)|
+|1642|furthest-building-you-can-reach||[python3](./python3/1642.furthest-building-you-can-reach.py)|
+|1658|minimum-operations-to-reduce-x-to-zero||[python3](./python3/1658.minimum-operations-to-reduce-x-to-zero.py)|
+|1706|where-will-the-ball-fall||[python3](./python3/1706.where-will-the-ball-fall.py)|
 |1778|shortest-path-in-a-hidden-grid||[python3](./python3/1778.shortest-path-in-a-hidden-grid.py)|
 |1796|second-largest-digit-in-a-string||[python3](./python3/1796.second-largest-digit-in-a-string.py)|
 |1798|maximum-number-of-consecutive-values-you-can-make||[python3](./python3/1798.maximum-number-of-consecutive-values-you-can-make.py)|
 |1804|implement-trie-ii||[python3](./python3/1804.implement-trie-ii.py)|
+|1805|number-of-different-integers-in-a-string||[python3](./python3/1805.number-of-different-integers-in-a-string.py)|
+|1806|minimum-number-of-operations-to-reinitialize-a-permutation||[python3](./python3/1806.minimum-number-of-operations-to-reinitialize-a-permutation.py)|
+|1807|evaluate-the-bracket-pairs-of-a-string||[python3](./python3/1807.evaluate-the-bracket-pairs-of-a-string.py)|
 |1810|minimum-path-cost-in-a-hidden-grid||[python3](./python3/1810.minimum-path-cost-in-a-hidden-grid.py)|
+|1834|single-threaded-cpu||[python3](./python3/1834.single-threaded-cpu.py)|
 ## Readme Generator
 The script needs `python3`.
 ```shell
