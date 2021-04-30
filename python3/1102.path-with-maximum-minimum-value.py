@@ -23,7 +23,7 @@ class Solution:
                 if in_bound(next_x, next_y, n, m) and A[next_x][next_y] >= curr_min:
                     uf.union((next_x, next_y), (x, y))
                     if uf.is_union((0, 0), (n - 1, m - 1)):
-                        return uf.min_score()
+                        return curr_min
         
         return None
 
@@ -69,15 +69,3 @@ class UnionFind:
     def to_1d(self, point):
         return point[0] * self.m + point[1]
         
-    def to_2d(self, index):
-        return index // self.m, index % self.m
-        
-    def min_score(self):
-        min_score = float('inf')
-        parent = self.parents[self.find(self.to_1d((0, 0)))]
-        for index, val in enumerate(self.parents):
-            if val == parent:
-                x, y = self.to_2d(index)
-                min_score = min(min_score, self.A[x][y])
-                
-        return min_score
