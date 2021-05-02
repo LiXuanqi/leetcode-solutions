@@ -1,3 +1,4 @@
+# Solution 1: with sort
 class Solution:
     def findLongestWord(self, s: str, dictionary: List[str]) -> str:
         def order_func(word):
@@ -10,6 +11,23 @@ class Solution:
                 return word
         return ''
     
+# Solution 2: without sort
+class Solution:
+    def findLongestWord(self, s: str, dictionary: List[str]) -> str:
+        def order_func(word):
+            return -len(word), word
+        
+        curr_ans = ''
+        
+        for word in dictionary:
+            if not order_func(word) < order_func(curr_ans):
+                continue
+            if match(word, s):
+                curr_ans = word
+            
+        return curr_ans
+
+# Common function:                    
 def match(word, pattern):
     pointer_1 = 0
     pointer_2 = 0
