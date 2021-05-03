@@ -285,6 +285,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |348|design-tic-tac-toe|[java](./java/348.design-tic-tac-toe.java)||
 |349|intersection-of-two-arrays|[java](./java/349.intersection-of-two-arrays.java)|[python3](./python3/349.intersection-of-two-arrays.py)|
 |350|intersection-of-two-arrays-ii|[java](./java/350.intersection-of-two-arrays-ii.java)||
+|353|design-snake-game||[python3](./python3/353.design-snake-game.py)|
 |356|line-reflection||[python3](./python3/356.line-reflection.py)|
 |359|logger-rate-limiter|[java](./java/359.logger-rate-limiter.java)|[python3](./python3/359.logger-rate-limiter.py)|
 |361|boom-enemy||[python3](./python3/361.boom-enemy.py)|
@@ -299,6 +300,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |380|insert-delete-getrandom-o1|[java](./java/380.insert-delete-getrandom-o1.java)||
 |381|insert-delete-getrandom-o1-duplicates-allowed|[java](./java/381.insert-delete-getrandom-o1-duplicates-allowed.java)||
 |383|ransom-note|[java](./java/383.ransom-note.java)||
+|384|shuffle-an-array||[python3](./python3/384.shuffle-an-array.py)|
 |387|first-unique-character-in-a-string|[java](./java/387.first-unique-character-in-a-string.java)||
 |389|find-the-difference|[java](./java/389.find-the-difference.java)||
 |392|is-subsequence|[java](./java/392.is-subsequence.java)||
@@ -362,6 +364,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |513|find-bottom-left-tree-value|[java](./java/513.find-bottom-left-tree-value.java)||
 |518|coin-change-2|[java](./java/518.coin-change-2.java)||
 |523|continuous-subarray-sum|[java](./java/523.continuous-subarray-sum.java)||
+|524|longest-word-in-dictionary-through-deleting||[python3](./python3/524.longest-word-in-dictionary-through-deleting.py)|
 |528|random-pick-with-weight|[java](./java/528.random-pick-with-weight.java)||
 |529|minesweeper||[python3](./python3/529.minesweeper.py)|
 |530|minimum-absolute-difference-in-bst||[python3](./python3/530.minimum-absolute-difference-in-bst.py)|
@@ -425,6 +428,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |692|top-k-frequent-words|[java](./java/692.top-k-frequent-words.java)||
 |693|binary-number-with-alternating-bits|[java](./java/693.binary-number-with-alternating-bits.java)||
 |695|max-area-of-island|[java](./java/695.max-area-of-island.java)||
+|698|partition-to-k-equal-sum-subsets||[python3](./python3/698.partition-to-k-equal-sum-subsets.py)|
 |700|search-in-a-binary-search-tree|[java](./java/700.search-in-a-binary-search-tree.java)||
 |701|insert-into-a-binary-search-tree|[java](./java/701.insert-into-a-binary-search-tree.java)||
 |702|search-in-a-sorted-array-of-unknown-size|[java](./java/702.search-in-a-sorted-array-of-unknown-size.java)||
@@ -441,6 +445,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |724|find-pivot-index|[java](./java/724.find-pivot-index.java)||
 |725|split-linked-list-in-parts|[java](./java/725.split-linked-list-in-parts.java)||
 |729|my-calendar-i|[java](./java/729.my-calendar-i.java)|[python3](./python3/729.my-calendar-i.py)|
+|731|my-calendar-ii||[python3](./python3/731.my-calendar-ii.py)|
 |733|flood-fill|[java](./java/733.flood-fill.java)||
 |734|sentence-similarity||[python3](./python3/734.sentence-similarity.py)|
 |737|sentense-similarity-ii||[python3](./python3/737.sentense-similarity-ii.py)|
@@ -473,6 +478,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |811|subdomain-visit-count||[python3](./python3/811.subdomain-visit-count.py)|
 |812|largest-triangle-area||[python3](./python3/812.largest-triangle-area.py)|
 |814|binary-tree-pruning|[java](./java/814.binary-tree-pruning.java)||
+|817|linked-list-components||[python3](./python3/817.linked-list-components.py)|
 |819|most-common-word|[java](./java/819.most-common-word.java)||
 |821|shortest-distance-to-a-character||[python3](./python3/821.shortest-distance-to-a-character.py)|
 |824|goat-latin|[java](./java/824.goat-latin.java)||
@@ -485,9 +491,10 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |842|split-array-into-fibonacci-sequence||[python3](./python3/842.split-array-into-fibonacci-sequence.py)|
 |843|guess-the-word||[python3](./python3/843.guess-the-word.py)|
 |844|backspace-string-compare|[java](./java/844.backspace-string-compare.java)||
+|849|maximize-distance-to-closest-person||[python3](./python3/849.maximize-distance-to-closest-person.py)|
 |852|peak-index-in-a-mountain-array|[java](./java/852.peak-index-in-a-mountain-array.java)||
-|855|exam-room||[python3](./python3/855.exam-room.py)|
 |853|car-fleet||[python3](./python3/853.car-fleet.py)|
+|855|exam-room||[python3](./python3/855.exam-room.py)|
 |858|mirror-reflection||[python3](./python3/858.mirror-reflection.py)|
 |862|shortest-subarray-with-sum-at-least-k||[python3](./python3/862.shortest-subarray-with-sum-at-least-k.py)|
 |863|all-nodes-distance-k-in-binary-tree||[python3](./python3/863.all-nodes-distance-k-in-binary-tree.py)|
@@ -495,6 +502,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |867|transpose-matrix|[java](./java/867.transpose-matrix.java)||
 |872|leaf-similar-trees||[python3](./python3/872.leaf-similar-trees.py)|
 |876|middle-of-the-linked-list|[java](./java/876.middle-of-the-linked-list.java)||
+|877|stone-game||[python3](./python3/877.stone-game.py)|
 |884|uncommon-words-from-two-sentences||[python3](./python3/884.uncommon-words-from-two-sentences.py)|
 |886|possible-bipartition|[java](./java/886.possible-bipartition.java)||
 |888|fair-candy-swap|[java](./java/888.fair-candy-swap.java)||
@@ -530,6 +538,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |980|unique-paths-iii||[python3](./python3/980.unique-paths-iii.py)|
 |981|time-based-key-value-store||[python3](./python3/981.time-based-key-value-store.py)|
 |985|sum-of-even-numbers-after-queries|[java](./java/985.sum-of-even-numbers-after-queries.java)||
+|986|interval-list-intersections||[python3](./python3/986.interval-list-intersections.py)|
 |987|vertical-order-traversal-of-a-binary-tree||[python3](./python3/987.vertical-order-traversal-of-a-binary-tree.py)|
 |993|cousins-in-binary-tree||[python3](./python3/993.cousins-in-binary-tree.py)|
 |994|rotting-oranges||[python3](./python3/994.rotting-oranges.py)|
@@ -539,6 +548,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1022|sum-of-root-to-leaf-binary-numbers||[python3](./python3/1022.sum-of-root-to-leaf-binary-numbers.py)|
 |1024|video-stitching||[python3](./python3/1024.video-stitching.py)|
 |1026|maximum-difference-between-node-and-ancestor||[python3](./python3/1026.maximum-difference-between-node-and-ancestor.py)|
+|1027|longest-arithmetic-subsequence||[python3](./python3/1027.longest-arithmetic-subsequence.py)|
 |1029|two-city-scheduling|[java](./java/1029.two-city-scheduling.java)||
 |1030|matrix-cells-in-distance-order|[java](./java/1030.matrix-cells-in-distance-order.java)||
 |1031|maximum-sum-of-two-non-overlapping-subarrays|[java](./java/1031.maximum-sum-of-two-non-overlapping-subarrays.java)||
@@ -549,12 +559,14 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1064|fixed-point||[python3](./python3/1064.fixed-point.py)|
 |1089|duplicate-zeros||[python3](./python3/1089.duplicate-zeros.py)|
 |1091|shortest-path-in-binary-matrix||[python3](./python3/1091.shortest-path-in-binary-matrix.py)|
+|1102|path-with-maximum-minimum-value||[python3](./python3/1102.path-with-maximum-minimum-value.py)|
 |1108|defanging-an-ip-address||[python3](./python3/1108.defanging-an-ip-address.py)|
 |1122|relative-sort-array||[python3](./python3/1122.relative-sort-array.py)|
 |1123|lowest-common-ancestor-of-deepest-leaves||[python3](./python3/1123.lowest-common-ancestor-of-deepest-leaves.py)|
 |1128|number-of-equivalent-domino-pairs||[python3](./python3/1128.number-of-equivalent-domino-pairs.py)|
 |1129|shortest-path-with-alternating-colors||[python3](./python3/1129.shortest-path-with-alternating-colors.py)|
 |1138|alphabet-board-path||[python3](./python3/1138.alphabet-board-path.py)|
+|1140|stone-game-ii||[python3](./python3/1140.stone-game-ii.py)|
 |1144|decrease-elements-to-make-array-zigzag||[python3](./python3/1144.decrease-elements-to-make-array-zigzag.py)|
 |1146|snapshot-array||[python3](./python3/1146.snapshot-array.py)|
 |1197|minimum-knight-moves||[python3](./python3/1197.minimum-knight-moves.py)|
@@ -565,11 +577,13 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1313|decompress-run-length-encoded-list||[python3](./python3/1313.decompress-run-length-encoded-list.py)|
 |1352|product-of-the-last-k-numbers||[python3](./python3/1352.product-of-the-last-k-numbers.py)|
 |1387|sort-integers-by-the-power-value||[python3](./python3/1387.sort-integers-by-the-power-value.py)|
+|1406|stone-game-iii||[python3](./python3/1406.stone-game-iii.py)|
 |1423|maximum-points-you-can-obtain-from-cards||[python3](./python3/1423.maximum-points-you-can-obtain-from-cards.py)|
 |1438|longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit||[python3](./python3/1438.longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit.py)|
 |1450|number-of-students-doing-homework-at-a-given-time||[python3](./python3/1450.number-of-students-doing-homework-at-a-given-time.py)|
 |1451|rearrange-words-in-sentence||[python3](./python3/1451.rearrange-words-in-sentence.py)|
 |1477|find-two-non-overlapping-sub-arrays-each-with-target-sun||[python3](./python3/1477.find-two-non-overlapping-sub-arrays-each-with-target-sun.py)|
+|1510|stone-game-iv||[python3](./python3/1510.stone-game-iv.py)|
 |1525|number-of-good-ways-to-split-a-string||[python3](./python3/1525.number-of-good-ways-to-split-a-string.py)|
 |1576|replace-all-?s-to-avoid-consecutive-repeating-characters||[python3](./python3/1576.replace-all-?s-to-avoid-consecutive-repeating-characters.py)|
 |1584|min-cost-to-connect-all-points||[python3](./python3/1584.min-cost-to-connect-all-points.py)|
@@ -577,6 +591,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1631|path-with-minimum-effort||[python3](./python3/1631.path-with-minimum-effort.py)|
 |1642|furthest-building-you-can-reach||[python3](./python3/1642.furthest-building-you-can-reach.py)|
 |1658|minimum-operations-to-reduce-x-to-zero||[python3](./python3/1658.minimum-operations-to-reduce-x-to-zero.py)|
+|1690|stone-game-vii||[python3](./python3/1690.stone-game-vii.py)|
 |1706|where-will-the-ball-fall||[python3](./python3/1706.where-will-the-ball-fall.py)|
 |1778|shortest-path-in-a-hidden-grid||[python3](./python3/1778.shortest-path-in-a-hidden-grid.py)|
 |1796|second-largest-digit-in-a-string||[python3](./python3/1796.second-largest-digit-in-a-string.py)|
