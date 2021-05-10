@@ -3,7 +3,7 @@
 
 This repository records my solutions on LeetCode, written in **Java and Python**.
 
-❤️ Notes and summaries are in my [blog](http://lixuanqi.me).
+❤️ Notes and summaries are in my [blog](https://lixuanqi.netlify.app/).
 
 🖥 This `README.md` is generated automatically. 
 
@@ -583,6 +583,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1450|number-of-students-doing-homework-at-a-given-time||[python3](./python3/1450.number-of-students-doing-homework-at-a-given-time.py)|
 |1451|rearrange-words-in-sentence||[python3](./python3/1451.rearrange-words-in-sentence.py)|
 |1477|find-two-non-overlapping-sub-arrays-each-with-target-sun||[python3](./python3/1477.find-two-non-overlapping-sub-arrays-each-with-target-sun.py)|
+|1509|minimum-difference-between-largest-and-smallest-value-in-three-moves||[python3](./python3/1509.minimum-difference-between-largest-and-smallest-value-in-three-moves.py)|
 |1510|stone-game-iv||[python3](./python3/1510.stone-game-iv.py)|
 |1525|number-of-good-ways-to-split-a-string||[python3](./python3/1525.number-of-good-ways-to-split-a-string.py)|
 |1576|replace-all-?s-to-avoid-consecutive-repeating-characters||[python3](./python3/1576.replace-all-?s-to-avoid-consecutive-repeating-characters.py)|
