@@ -32,7 +32,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |20|valid-parentheses|[java](./java/20.valid-parentheses.java)||
 |21|merge-two-sorted-lists|[java](./java/21.merge-two-sorted-lists.java)|[python3](./python3/21.merge-two-sorted-lists.py)|
 |22|generate-parentheses|[java](./java/22.generate-parentheses.java)||
-|23|merge-k-sorted-lists|[java](./java/23.merge-k-sorted-lists.java)||
+|23|merge-k-sorted-lists|[java](./java/23.merge-k-sorted-lists.java)|[python3](./python3/23.merge-k-sorted-lists.py)|
 |24|swap-nodes-in-pairs|[java](./java/24.swap-nodes-in-pairs.java)||
 |25|reverse-nodes-in-k-group|[java](./java/25.reverse-nodes-in-k-group.java)||
 |26|remove-duplicates-from-sorted-array|[java](./java/26.remove-duplicates-from-sorted-array.java)||
@@ -54,7 +54,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |44|wildcard-matching|[java](./java/44.wildcard-matching.java)||
 |45|jump-game-ii|[java](./java/45.jump-game-ii.java)|[python3](./python3/45.jump-game-ii.py)|
 |46|permutations|[java](./java/46.permutations.java)||
-|47|permutations-ii|[java](./java/47.permutations-ii.java)||
+|47|permutations-ii|[java](./java/47.permutations-ii.java)|[python3](./python3/47.permutations-ii.py)|
 |48|rotate-image|[java](./java/48.rotate-image.java)||
 |49|group-anagrams|[java](./java/49.group-anagrams.java)||
 |50|powx-n|[java](./java/50.powx-n.java)||
@@ -239,6 +239,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |280|wiggle-sort|[java](./java/280.wiggle-sort.java)||
 |281|zigzag-iterator|[java](./java/281.zigzag-iterator.java)||
 |282|expression-add-operators|[java](./java/282.expression-add-operators.java)||
+|284|peeking-iterator||[python3](./python3/284.peeking-iterator.py)|
 |285|inorder-successor-in-bst|[java](./java/285.inorder-successor-in-bst.java)||
 |286|walls-and-gates|[java](./java/286.walls-and-gates.java)||
 |287|find-the-duplicate-number|[java](./java/287.find-the-duplicate-number.java)||
@@ -251,7 +252,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |297|serialize-and-deserialize-binary-tree|[java](./java/297.serialize-and-deserialize-binary-tree.java)||
 |298|binary-tree-longest-consecutive-sequence|[java](./java/298.binary-tree-longest-consecutive-sequence.java)||
 |299|bulls-and-cows|[java](./java/299.bulls-and-cows.java)||
-|300|longest-increasing-subsequence|[java](./java/300.longest-increasing-subsequence.java)||
+|300| longest-increasing-subsequence|[java](./java/300.longest-increasing-subsequence.java)|[python3](./python3/300. longest-increasing-subsequence.py)|
 |301|remove-invalid-parentheses|[java](./java/301.remove-invalid-parentheses.java)||
 |303|range-sum-query-immutable|[java](./java/303.range-sum-query-immutable.java)||
 |304|range-sum-query-2d-immutable|[java](./java/304.range-sum-query-2d-immutable.java)||
@@ -266,7 +267,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |316|remove-duplicate-letters||[python3](./python3/316.remove-duplicate-letters.py)|
 |317|shortest-distance-from-all-buildings|[java](./java/317.shortest-distance-from-all-buildings.java)||
 |320|generalized-abbreviation||[python3](./python3/320.generalized-abbreviation.py)|
-|322|coin-change|[java](./java/322.coin-change.java)||
+|322|coin-change|[java](./java/322.coin-change.java)|[python3](./python3/322.coin-change.py)|
 |323|number-of-connected-components-in-an-undirected-graph|[java](./java/323.number-of-connected-components-in-an-undirected-graph.java)||
 |325|maximum-size-subarray-sum-equals-k|[java](./java/325.maximum-size-subarray-sum-equals-k.java)||
 |326|power-of-three||[python3](./python3/326.power-of-three.py)|
@@ -274,6 +275,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |329|longest-increasing-path-in-a-matrix|[java](./java/329.longest-increasing-path-in-a-matrix.java)||
 |332|reconstruct-itinerary|[java](./java/332.reconstruct-itinerary.java)||
 |333|largest-bst-subtree||[python3](./python3/333.largest-bst-subtree.py)|
+|334|increasing-triplet-subsequence||[python3](./python3/334.increasing-triplet-subsequence.py)|
 |337|house-robber-iii||[python3](./python3/337.house-robber-iii.py)|
 |338|counting-bits|[java](./java/338.counting-bits.java)||
 |339|nested-list-weight-sum|[java](./java/339.nested-list-weight-sum.java)||
@@ -286,6 +288,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |349|intersection-of-two-arrays|[java](./java/349.intersection-of-two-arrays.java)|[python3](./python3/349.intersection-of-two-arrays.py)|
 |350|intersection-of-two-arrays-ii|[java](./java/350.intersection-of-two-arrays-ii.java)||
 |353|design-snake-game||[python3](./python3/353.design-snake-game.py)|
+|354|russian-doll-envelopes||[python3](./python3/354.russian-doll-envelopes.py)|
 |356|line-reflection||[python3](./python3/356.line-reflection.py)|
 |359|logger-rate-limiter|[java](./java/359.logger-rate-limiter.java)|[python3](./python3/359.logger-rate-limiter.py)|
 |361|boom-enemy||[python3](./python3/361.boom-enemy.py)|
@@ -339,6 +342,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |459|repeated-substring-pattern||[python3](./python3/459.repeated-substring-pattern.py)|
 |461|hamming-distance|[java](./java/461.hamming-distance.java)||
 |463|island-perimeter|[java](./java/463.island-perimeter.java)||
+|465|optimal-account-balancing||[python3](./python3/465.optimal-account-balancing.py)|
 |467|unique-substrings-in-wraparound-string|[java](./java/467.unique-substrings-in-wraparound-string.java)||
 |475|heaters|[java](./java/475.heaters.java)||
 |476|number-complement||[python3](./python3/476.number-complement.py)|
@@ -439,13 +443,16 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |708|insert-into-a-cyclic-sorted-list|[java](./java/708.insert-into-a-cyclic-sorted-list.java)||
 |709|to-lower-case|[java](./java/709.to-lower-case.java)||
 |714|best-time-to-buy-and-sell-stock-with-transaction-fee|[java](./java/714.best-time-to-buy-and-sell-stock-with-transaction-fee.java)||
+|715|range-module||[python3](./python3/715.range-module.py)|
 |716|max-stack|[java](./java/716.max-stack.java)||
 |717|1-bit-and-2-bit-characters|[java](./java/717.1-bit-and-2-bit-characters.java)||
 |721|accounts-merge|[java](./java/721.accounts-merge.java)||
+|722|remove-comments||[python3](./python3/722.remove-comments.py)|
 |724|find-pivot-index|[java](./java/724.find-pivot-index.java)||
 |725|split-linked-list-in-parts|[java](./java/725.split-linked-list-in-parts.java)||
 |729|my-calendar-i|[java](./java/729.my-calendar-i.java)|[python3](./python3/729.my-calendar-i.py)|
 |731|my-calendar-ii||[python3](./python3/731.my-calendar-ii.py)|
+|732|my-calendar-iii||[python3](./python3/732.my-calendar-iii.py)|
 |733|flood-fill|[java](./java/733.flood-fill.java)||
 |734|sentence-similarity||[python3](./python3/734.sentence-similarity.py)|
 |737|sentense-similarity-ii||[python3](./python3/737.sentense-similarity-ii.py)|
@@ -491,6 +498,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |842|split-array-into-fibonacci-sequence||[python3](./python3/842.split-array-into-fibonacci-sequence.py)|
 |843|guess-the-word||[python3](./python3/843.guess-the-word.py)|
 |844|backspace-string-compare|[java](./java/844.backspace-string-compare.java)||
+|846|hand-of-straights||[python3](./python3/846.hand-of-straights.py)|
 |849|maximize-distance-to-closest-person||[python3](./python3/849.maximize-distance-to-closest-person.py)|
 |852|peak-index-in-a-mountain-array|[java](./java/852.peak-index-in-a-mountain-array.java)||
 |853|car-fleet||[python3](./python3/853.car-fleet.py)|
@@ -512,8 +520,10 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |896|monotonic-array|[java](./java/896.monotonic-array.java)||
 |897|increasing-order-search-tree|[java](./java/897.increasing-order-search-tree.java)||
 |898|bitwise-ors-of-subarrays|[java](./java/898.bitwise-ors-of-subarrays.java)||
+|900|rle-iterator||[python3](./python3/900.rle-iterator.py)|
 |904|fruit-into-baskets|[java](./java/904.fruit-into-baskets.java)||
 |905|sort-array-by-parity|[java](./java/905.sort-array-by-parity.java)||
+|907|sum-of-subarray-minimums||[python3](./python3/907.sum-of-subarray-minimums.py)|
 |908|smallest-range-i||[python3](./python3/908.smallest-range-i.py)|
 |911|online-election||[python3](./python3/911.online-election.py)|
 |914|x-of-a-kind-in-a-deck-of-cards||[python3](./python3/914.x-of-a-kind-in-a-deck-of-cards.py)|
@@ -555,6 +565,7 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1037|valid-boomerang||[python3](./python3/1037.valid-boomerang.py)|
 |1046|last-stone-weight||[python3](./python3/1046.last-stone-weight.py)|
 |1047|remove-all-adjacent-duplicates-in-string||[python3](./python3/1047.remove-all-adjacent-duplicates-in-string.py)|
+|1048|longest-string-chain||[python3](./python3/1048.longest-string-chain.py)|
 |1054|distant-barcodes||[python3](./python3/1054.distant-barcodes.py)|
 |1064|fixed-point||[python3](./python3/1064.fixed-point.py)|
 |1089|duplicate-zeros||[python3](./python3/1089.duplicate-zeros.py)|
@@ -570,6 +581,8 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1144|decrease-elements-to-make-array-zigzag||[python3](./python3/1144.decrease-elements-to-make-array-zigzag.py)|
 |1146|snapshot-array||[python3](./python3/1146.snapshot-array.py)|
 |1197|minimum-knight-moves||[python3](./python3/1197.minimum-knight-moves.py)|
+|1235|maximum-profit-in-job-scheduling||[python3](./python3/1235.maximum-profit-in-job-scheduling.py)|
+|1244|design-a-leaderboard|[java](./java/1244.design-a-leaderboard.java)||
 |1252|cells-with-odd-values-in-a-matrix||[python3](./python3/1252.cells-with-odd-values-in-a-matrix.py)|
 |1254|number-of-clesed-islands||[python3](./python3/1254.number-of-clesed-islands.py)|
 |1256|encode-number||[python3](./python3/1256.encode-number.py)|
@@ -583,17 +596,22 @@ This repository records my solutions on LeetCode, written in **Java and Python**
 |1450|number-of-students-doing-homework-at-a-given-time||[python3](./python3/1450.number-of-students-doing-homework-at-a-given-time.py)|
 |1451|rearrange-words-in-sentence||[python3](./python3/1451.rearrange-words-in-sentence.py)|
 |1477|find-two-non-overlapping-sub-arrays-each-with-target-sun||[python3](./python3/1477.find-two-non-overlapping-sub-arrays-each-with-target-sun.py)|
+|1499|max-value-of-equation||[python3](./python3/1499.max-value-of-equation.py)|
 |1509|minimum-difference-between-largest-and-smallest-value-in-three-moves||[python3](./python3/1509.minimum-difference-between-largest-and-smallest-value-in-three-moves.py)|
 |1510|stone-game-iv||[python3](./python3/1510.stone-game-iv.py)|
 |1525|number-of-good-ways-to-split-a-string||[python3](./python3/1525.number-of-good-ways-to-split-a-string.py)|
+|1526|minimum-number-of-increments-on-subarrays-to-form-a-target-array||[python3](./python3/1526.minimum-number-of-increments-on-subarrays-to-form-a-target-array.py)|
 |1576|replace-all-?s-to-avoid-consecutive-repeating-characters||[python3](./python3/1576.replace-all-?s-to-avoid-consecutive-repeating-characters.py)|
 |1584|min-cost-to-connect-all-points||[python3](./python3/1584.min-cost-to-connect-all-points.py)|
+|1603|design-parking-system||[python3](./python3/1603.design-parking-system.py)|
+|1610|maximum-number-of-visible-points||[python3](./python3/1610.maximum-number-of-visible-points.py)|
 |1616|split-two-strings-to-make-palindrome||[python3](./python3/1616.split-two-strings-to-make-palindrome.py)|
 |1631|path-with-minimum-effort||[python3](./python3/1631.path-with-minimum-effort.py)|
 |1642|furthest-building-you-can-reach||[python3](./python3/1642.furthest-building-you-can-reach.py)|
 |1658|minimum-operations-to-reduce-x-to-zero||[python3](./python3/1658.minimum-operations-to-reduce-x-to-zero.py)|
 |1690|stone-game-vii||[python3](./python3/1690.stone-game-vii.py)|
 |1706|where-will-the-ball-fall||[python3](./python3/1706.where-will-the-ball-fall.py)|
+|1770|maximum-score-from-performing-multiplication-operations||[python3](./python3/1770.maximum-score-from-performing-multiplication-operations.py)|
 |1778|shortest-path-in-a-hidden-grid||[python3](./python3/1778.shortest-path-in-a-hidden-grid.py)|
 |1796|second-largest-digit-in-a-string||[python3](./python3/1796.second-largest-digit-in-a-string.py)|
 |1798|maximum-number-of-consecutive-values-you-can-make||[python3](./python3/1798.maximum-number-of-consecutive-values-you-can-make.py)|
