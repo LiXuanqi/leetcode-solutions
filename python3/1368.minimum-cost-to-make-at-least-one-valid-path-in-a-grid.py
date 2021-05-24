@@ -11,7 +11,7 @@ class Solution:
         start = (0, 0)
         end = (n - 1, m - 1)
         
-        visited = set()
+       
         heap = [(0, start)]
         costs = {
             start: 0
